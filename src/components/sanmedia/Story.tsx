@@ -25,6 +25,9 @@ export function Story() {
     if (!wrap || reducedMotion()) return;
     registerGsap();
 
+    const texts = textRefs.current.filter((el): el is HTMLDivElement => Boolean(el));
+    const imgs = imgRefs.current.filter((el): el is HTMLDivElement => Boolean(el));
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -36,22 +39,22 @@ export function Story() {
       });
 
       // Stage 0 is visible from the start.
-      gsap.set(textRefs.current[0], { autoAlpha: 1 });
-      gsap.set(textRefs.current.slice(1), { autoAlpha: 0 });
-      gsap.set(imgRefs.current[0], { opacity: 1 });
-      gsap.set(imgRefs.current.slice(1), { opacity: 0 });
+      gsap.set(texts[0], { autoAlpha: 1 });
+      gsap.set(texts.slice(1), { autoAlpha: 0 });
+      gsap.set(imgs[0], { opacity: 1 });
+      gsap.set(imgs.slice(1), { opacity: 0 });
 
       STAGES.forEach((_, i) => {
         if (i === 0) return;
-        tl.to(textRefs.current[i - 1], { autoAlpha: 0, y: -50, duration: 0.2, ease: "power1.in" }, i - 0.25)
-          .to(imgRefs.current[i - 1], { opacity: 0, duration: 0.3, ease: "none" }, i - 0.25)
+        tl.to(texts[i - 1], { autoAlpha: 0, y: -50, duration: 0.2, ease: "power1.in" }, i - 0.25)
+          .to(imgs[i - 1], { opacity: 0, duration: 0.3, ease: "none" }, i - 0.25)
           .fromTo(
-            textRefs.current[i],
+            texts[i],
             { autoAlpha: 0, y: 50 },
             { autoAlpha: 1, y: 0, duration: 0.25, ease: "power1.out" },
             i
           )
-          .to(imgRefs.current[i], { opacity: 1, duration: 0.35, ease: "none" }, i);
+          .to(imgs[i], { opacity: 1, duration: 0.35, ease: "none" }, i);
       });
 
       tl.fromTo(barRef.current, { scaleX: 0 }, { scaleX: 1, duration: STAGES.length, ease: "none" }, 0);

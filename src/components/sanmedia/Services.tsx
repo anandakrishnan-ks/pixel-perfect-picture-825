@@ -28,6 +28,9 @@ export function Services() {
     if (!wrap || reducedMotion()) return;
     registerGsap();
 
+    const items = itemRefs.current.filter((el): el is HTMLDivElement => Boolean(el));
+    const imgs = imgRefs.current.filter((el): el is HTMLDivElement => Boolean(el));
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -40,16 +43,16 @@ export function Services() {
 
       SERVICES.forEach((_, i) => {
         if (i === 0) {
-          gsap.set(itemRefs.current[0], { opacity: 1 });
-          gsap.set(imgRefs.current[0], { opacity: 1 });
-          gsap.set(itemRefs.current.slice(1), { opacity: 0.18 });
-          gsap.set(imgRefs.current.slice(1), { opacity: 0 });
+          gsap.set(items[0], { opacity: 1 });
+          gsap.set(imgs[0], { opacity: 1 });
+          gsap.set(items.slice(1), { opacity: 0.18 });
+          gsap.set(imgs.slice(1), { opacity: 0 });
           return;
         }
-        tl.to(imgRefs.current[i - 1], { opacity: 0, duration: 0.3, ease: "none" }, i - 0.2)
-          .to(itemRefs.current[i - 1], { opacity: 0.18, duration: 0.2, ease: "none" }, i - 0.2)
-          .to(imgRefs.current[i], { opacity: 1, duration: 0.35, ease: "none" }, i)
-          .to(itemRefs.current[i], { opacity: 1, duration: 0.2, ease: "none" }, i);
+        tl.to(imgs[i - 1], { opacity: 0, duration: 0.3, ease: "none" }, i - 0.2)
+          .to(items[i - 1], { opacity: 0.18, duration: 0.2, ease: "none" }, i - 0.2)
+          .to(imgs[i], { opacity: 1, duration: 0.35, ease: "none" }, i)
+          .to(items[i], { opacity: 1, duration: 0.2, ease: "none" }, i);
       });
     }, wrap);
     return () => ctx.revert();
