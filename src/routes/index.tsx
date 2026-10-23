@@ -27,7 +27,8 @@ function Index() {
     if (reducedMotion()) return;
     registerGsap();
     const lenis = new Lenis({ duration: 1.25, smoothWheel: true });
-    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+    const win = window as unknown as { __lenis?: Lenis | undefined };
+    win.__lenis = lenis;
     lenis.on("scroll", ScrollTrigger.update);
     const tick = (time: number) => lenis.raf(time * 1000);
     gsap.ticker.add(tick);
@@ -35,7 +36,7 @@ function Index() {
     return () => {
       gsap.ticker.remove(tick);
       lenis.destroy();
-      (window as unknown as { __lenis?: Lenis }).__lenis = undefined;
+      win.__lenis = undefined;
     };
   }, []);
 

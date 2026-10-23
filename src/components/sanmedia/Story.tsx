@@ -57,7 +57,9 @@ export function Story() {
           .to(imgs[i], { opacity: 1, duration: 0.35, ease: "none" }, i);
       });
 
-      tl.fromTo(barRef.current, { scaleX: 0 }, { scaleX: 1, duration: STAGES.length, ease: "none" }, 0);
+      if (barRef.current) {
+        tl.fromTo(barRef.current, { scaleX: 0 }, { scaleX: 1, duration: STAGES.length, ease: "none" }, 0);
+      }
     }, wrap);
     return () => ctx.revert();
   }, []);
