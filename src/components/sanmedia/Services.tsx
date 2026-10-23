@@ -42,17 +42,21 @@ export function Services() {
       });
 
       SERVICES.forEach((_, i) => {
-        if (i === 0) {
-          gsap.set(items[0], { opacity: 1 });
-          gsap.set(imgs[0], { opacity: 1 });
+        const prevImg = imgs[i - 1];
+        const prevItem = items[i - 1];
+        const curImg = imgs[i];
+        const curItem = items[i];
+        if (i === 0 || !prevImg || !prevItem || !curImg || !curItem) {
+          if (items[0]) gsap.set(items[0], { opacity: 1 });
+          if (imgs[0]) gsap.set(imgs[0], { opacity: 1 });
           gsap.set(items.slice(1), { opacity: 0.18 });
           gsap.set(imgs.slice(1), { opacity: 0 });
           return;
         }
-        tl.to(imgs[i - 1], { opacity: 0, duration: 0.3, ease: "none" }, i - 0.2)
-          .to(items[i - 1], { opacity: 0.18, duration: 0.2, ease: "none" }, i - 0.2)
-          .to(imgs[i], { opacity: 1, duration: 0.35, ease: "none" }, i)
-          .to(items[i], { opacity: 1, duration: 0.2, ease: "none" }, i);
+        tl.to(prevImg, { opacity: 0, duration: 0.3, ease: "none" }, i - 0.2)
+          .to(prevItem, { opacity: 0.18, duration: 0.2, ease: "none" }, i - 0.2)
+          .to(curImg, { opacity: 1, duration: 0.35, ease: "none" }, i)
+          .to(curItem, { opacity: 1, duration: 0.2, ease: "none" }, i);
       });
     }, wrap);
     return () => ctx.revert();

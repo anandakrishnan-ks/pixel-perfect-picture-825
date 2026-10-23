@@ -39,25 +39,32 @@ export function Story() {
       });
 
       // Stage 0 is visible from the start.
-      gsap.set(texts[0], { autoAlpha: 1 });
+      if (texts[0]) gsap.set(texts[0], { autoAlpha: 1 });
+      if (imgs[0]) gsap.set(imgs[0], { opacity: 1 });
       gsap.set(texts.slice(1), { autoAlpha: 0 });
-      gsap.set(imgs[0], { opacity: 1 });
       gsap.set(imgs.slice(1), { opacity: 0 });
 
       STAGES.forEach((_, i) => {
         if (i === 0) return;
-        tl.to(texts[i - 1], { autoAlpha: 0, y: -50, duration: 0.2, ease: "power1.in" }, i - 0.25)
-          .to(imgs[i - 1], { opacity: 0, duration: 0.3, ease: "none" }, i - 0.25)
+        const prevText = texts[i - 1];
+        const prevImg = imgs[i - 1];
+        const nextText = texts[i];
+        const nextImg = imgs[i];
+        if (!prevText || !prevImg || !nextText || !nextImg) return;
+        tl.to(prevText, { autoAlpha: 0, y: -50, duration: 0.2, ease: "power1.in" }, i - 0.25)
+          .to(prevImg, { opacity: 0, duration: 0.3, ease: "none" }, i - 0.25)
           .fromTo(
-            texts[i],
+            nextText,
             { autoAlpha: 0, y: 50 },
             { autoAlpha: 1, y: 0, duration: 0.25, ease: "power1.out" },
             i
           )
-          .to(imgs[i], { opacity: 1, duration: 0.35, ease: "none" }, i);
+          .to(nextImg, { opacity: 1, duration: 0.35, ease: "none" }, i);
       });
 
-      tl.fromTo(barRef.current, { scaleX: 0 }, { scaleX: 1, duration: STAGES.length, ease: "none" }, 0);
+      if (barRef.current) {
+        tl.fromTo(barRef.current, { scaleX: 0 }, { scaleX: 1, duration: STAGES.length, ease: "none" }, 0);
+      }
     }, wrap);
     return () => ctx.revert();
   }, []);
