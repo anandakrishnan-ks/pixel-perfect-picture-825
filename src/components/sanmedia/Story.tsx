@@ -46,15 +46,20 @@ export function Story() {
 
       STAGES.forEach((_, i) => {
         if (i === 0) return;
-        tl.to(texts[i - 1], { autoAlpha: 0, y: -50, duration: 0.2, ease: "power1.in" }, i - 0.25)
-          .to(imgs[i - 1], { opacity: 0, duration: 0.3, ease: "none" }, i - 0.25)
+        const prevText = texts[i - 1];
+        const prevImg = imgs[i - 1];
+        const nextText = texts[i];
+        const nextImg = imgs[i];
+        if (!prevText || !prevImg || !nextText || !nextImg) return;
+        tl.to(prevText, { autoAlpha: 0, y: -50, duration: 0.2, ease: "power1.in" }, i - 0.25)
+          .to(prevImg, { opacity: 0, duration: 0.3, ease: "none" }, i - 0.25)
           .fromTo(
-            texts[i],
+            nextText,
             { autoAlpha: 0, y: 50 },
             { autoAlpha: 1, y: 0, duration: 0.25, ease: "power1.out" },
             i
           )
-          .to(imgs[i], { opacity: 1, duration: 0.35, ease: "none" }, i);
+          .to(nextImg, { opacity: 1, duration: 0.35, ease: "none" }, i);
       });
 
       if (barRef.current) {
