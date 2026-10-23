@@ -39,9 +39,9 @@ export function Story() {
       });
 
       // Stage 0 is visible from the start.
-      gsap.set(texts[0], { autoAlpha: 1 });
+      if (texts[0]) gsap.set(texts[0], { autoAlpha: 1 });
+      if (imgs[0]) gsap.set(imgs[0], { opacity: 1 });
       gsap.set(texts.slice(1), { autoAlpha: 0 });
-      gsap.set(imgs[0], { opacity: 1 });
       gsap.set(imgs.slice(1), { opacity: 0 });
 
       STAGES.forEach((_, i) => {
