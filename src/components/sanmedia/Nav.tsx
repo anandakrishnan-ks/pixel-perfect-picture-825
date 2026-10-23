@@ -4,8 +4,8 @@ import markWhite from "@/assets/sanmedia-mark-white.png.asset.json";
 const LINKS = [
   { label: "Work", target: "work" },
   { label: "Services", target: "services" },
-  { label: "Process", target: "process" },
-  { label: "About", target: "story" },
+  { label: "Process", target: "story" },
+  { label: "About", target: "about" },
   { label: "Contact", target: "contact" },
 ];
 
