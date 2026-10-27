@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import markWhite from "@/assets/sanmedia-mark-white.png.asset.json";
 import { revealChildren } from "./anim";
@@ -70,5 +71,3 @@ export function Footer() {
     </footer>
   );
 }
-
-import { useRef } from "react";

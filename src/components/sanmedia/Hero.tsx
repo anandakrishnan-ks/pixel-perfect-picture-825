@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Link } from "@tanstack/react-router";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import heroImg from "@/assets/hero.jpg";
 import markWhite from "@/assets/sanmedia-mark-white.png.asset.json";
@@ -63,7 +64,7 @@ export function Hero() {
         <div ref={filmRef} className="grain vignette absolute inset-0 will-change-transform">
           <img
             src={heroImg}
-            alt="SANMEDIA film set at night, camera crane in a beam of light"
+            alt="SAN MEDIA COMPANY film set at night, camera crane in a beam of light"
             width={1536}
             height={1024}
             className="h-full w-full object-cover will-change-transform"
@@ -87,12 +88,35 @@ export function Hero() {
             height={72}
             className="mb-8 h-14 w-14 object-contain md:h-20 md:w-20"
           />
-          <h1 className="display text-[17vw] leading-none tracking-[0.04em] text-foreground md:text-[11vw]">
-            SANMEDIA
+          <h1 className="display text-[15vw] leading-none tracking-[0.04em] text-foreground md:text-[9.5vw]">
+            SAN MEDIA
           </h1>
-          <p className="mt-6 text-base font-light tracking-wide text-foreground/85 md:text-xl">
-            Films that make brands feel.
+          <p className="display mt-2 text-[6vw] leading-none tracking-[0.32em] text-foreground/90 md:text-[3.4vw]">
+            COMPANY
           </p>
+          <p className="mt-8 text-lg font-light tracking-wide text-foreground/90 md:text-2xl">
+            Films. Stories. Brands. Visual Experiences.
+          </p>
+          <p className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-foreground/65 md:text-base">
+            A creative media and production company based in Thiruvananthapuram, Kerala — creating
+            films, campaigns and visual experiences for brands across Kerala and beyond.
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/work"
+              className="bg-foreground px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-85"
+            >
+              Explore Our Work
+            </Link>
+            <Link
+              to="/contact"
+              className="border border-foreground/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10"
+            >
+              Start a Project
+            </Link>
+          </div>
+
           <p className="meta mt-10 text-[10px] text-foreground/60">
             Film • Advertising • Production • Visual Storytelling
           </p>
