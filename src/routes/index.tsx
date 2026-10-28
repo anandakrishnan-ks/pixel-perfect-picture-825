@@ -1,56 +1,84 @@
-import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "lenis";
-import { Nav } from "@/components/sanmedia/Nav";
 import { Hero } from "@/components/sanmedia/Hero";
+import { About } from "@/components/sanmedia/About";
+import { Statement } from "@/components/sanmedia/Statement";
 import { Work } from "@/components/sanmedia/Work";
 import { Services } from "@/components/sanmedia/Services";
 import { Story } from "@/components/sanmedia/Story";
-import { Statement } from "@/components/sanmedia/Statement";
 import { Budget } from "@/components/sanmedia/Budget";
-import { About } from "@/components/sanmedia/About";
 import { Contact } from "@/components/sanmedia/Contact";
-import { GrainOverlay } from "@/components/sanmedia/GrainOverlay";
-import { registerGsap, reducedMotion } from "@/components/sanmedia/anim";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const SITE = "https://sanmedia.lovable.app";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      {
+        title: "SAN MEDIA COMPANY — Film & Video Production Company in Kerala",
+      },
+      {
+        name: "description",
+        content:
+          "A creative media and production company based in Thiruvananthapuram, Kerala — films, stories, brands and visual experiences for clients across Kerala and beyond.",
+      },
+      {
+        property: "og:title",
+        content: "SAN MEDIA COMPANY — Films. Stories. Brands. Visual Experiences.",
+      },
+      {
+        property: "og:description",
+        content:
+          "Creative media and production company based in Trivandrum, creating across Kerala. Advertising films, brand films, corporate films, photography and campaigns.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE}/` },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: `${SITE}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "SAN MEDIA COMPANY",
+          url: `${SITE}/`,
+          email: "contact@sanmediacompany.in",
+          description:
+            "Creative media and production company based in Thiruvananthapuram, Kerala, serving clients across Kerala and beyond.",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Thiruvananthapuram",
+            addressRegion: "Kerala",
+            addressCountry: "IN",
+          },
+          areaServed: "Kerala",
+          knowsAbout: [
+            "Film production",
+            "Advertising films",
+            "Brand films",
+            "Corporate films",
+            "Social media content",
+            "Photography",
+            "Post production",
+          ],
+        }),
+      },
+    ],
+  }),
 });
 
 function Index() {
-  useEffect(() => {
-    if (reducedMotion()) return;
-    registerGsap();
-    const lenis = new Lenis({ duration: 1.25, smoothWheel: true });
-    const win = window as unknown as { __lenis?: Lenis | undefined };
-    win.__lenis = lenis;
-    lenis.on("scroll", ScrollTrigger.update);
-    const tick = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
-    return () => {
-      gsap.ticker.remove(tick);
-      lenis.destroy();
-      win.__lenis = undefined;
-    };
-  }, []);
-
   return (
     <main className="bg-background">
-      <Nav />
-      <GrainOverlay />
       <Hero />
+      <About />
+      <Statement />
       <Work />
       <Services />
       <Story />
-      <Statement />
       <Budget />
-      <About />
       <Contact />
     </main>
   );

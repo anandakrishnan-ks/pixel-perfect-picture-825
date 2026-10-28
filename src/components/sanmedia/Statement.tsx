@@ -48,7 +48,7 @@ export function Statement() {
     <section ref={ref} id="statement" className="relative bg-paper text-ink">
       <div className="mx-auto max-w-[1500px] px-6 py-32 md:py-48 lg:px-12">
         <div data-rule className="h-px w-full origin-left bg-ink/30" />
-        <p className="meta mt-10 text-ink/60">Sanmedia — Trivandrum, Kerala</p>
+        <p className="meta mt-10 text-ink/60">SAN MEDIA COMPANY — Trivandrum, Kerala</p>
         <h2 className="display mt-10 text-[11vw] text-ink md:text-[7.2vw] lg:text-[6.4vw]">
           {LINES.map((line) => (
             <span key={line} className="block">

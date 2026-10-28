@@ -4,14 +4,22 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Nav } from "@/components/sanmedia/Nav";
+import { Footer } from "@/components/sanmedia/Footer";
+import { GrainOverlay } from "@/components/sanmedia/GrainOverlay";
+import { registerGsap, reducedMotion } from "@/components/sanmedia/anim";
 
 function NotFoundComponent() {
   return (
@@ -78,17 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SANMEDIA — Cinematic Film & Video Production, Trivandrum" },
+      { title: "SAN MEDIA COMPANY — Film & Video Production Company in Kerala" },
       {
         name: "description",
         content:
-          "SANMEDIA is a premium film and video production company in Trivandrum, Kerala. Advertising films, brand films, product films and cinematic campaigns.",
+          "SAN MEDIA COMPANY is a creative media and production company based in Thiruvananthapuram, Kerala. Advertising films, brand films, corporate films, photography and cinematic campaigns across Kerala and beyond.",
       },
-      { property: "og:title", content: "SANMEDIA — Cinematic Film & Video Production" },
-      {
-        property: "og:description",
-        content: "Your budget doesn't define the quality of your story. Films that make brands feel.",
-      },
+      { property: "og:site_name", content: "SAN MEDIA COMPANY" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -125,11 +129,38 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  // Site-wide smooth scrolling — the same cinematic feel on every page.
+  useEffect(() => {
+    if (reducedMotion()) return;
+    registerGsap();
+    const lenis = new Lenis({ duration: 1.25, smoothWheel: true });
+    const win = window as unknown as { __lenis?: Lenis | undefined };
+    win.__lenis = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+    const tick = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
+    gsap.ticker.lagSmoothing(0);
+    return () => {
+      gsap.ticker.remove(tick);
+      lenis.destroy();
+      win.__lenis = undefined;
+    };
+  }, []);
+
+  // Recalculate scroll triggers whenever a new page mounts.
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Nav />
+      <GrainOverlay />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <Footer />
     </QueryClientProvider>
   );
 }

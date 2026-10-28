@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "@tanstack/react-router";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import imgIdea from "@/assets/story-idea.jpg";
@@ -92,6 +93,17 @@ export function Story() {
             <div className="absolute inset-0 bg-background/55" />
           </div>
         ))}
+
+        {/* Stage label + link into the full process */}
+        <div className="absolute left-6 top-28 z-10 lg:left-12">
+          <p className="meta text-foreground/60">The process</p>
+          <Link
+            to="/process"
+            className="meta mt-4 inline-block border-b border-foreground/40 pb-1 text-[10px] text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
+          >
+            Full process
+          </Link>
+        </div>
 
         {/* Stage text */}
         <div className="relative z-10 flex h-full items-end">

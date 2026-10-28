@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "@tanstack/react-router";
 import { revealChildren } from "./anim";
 
 const TIERS = [
@@ -55,6 +56,16 @@ export function Budget() {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div data-reveal className="mt-14 flex flex-wrap items-center justify-between gap-6">
+          <p className="meta text-[10px] text-ink/50">Every scale — the same cinematic standard</p>
+          <Link
+            to="/contact"
+            className="border border-ink/40 px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-ink hover:text-paper"
+          >
+            Start a Project
+          </Link>
         </div>
       </div>
     </section>
