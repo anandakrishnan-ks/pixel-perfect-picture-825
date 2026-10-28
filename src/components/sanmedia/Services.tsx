@@ -109,6 +109,15 @@ export function Services() {
                 </div>
               ))}
             </div>
+            <div className="mt-12 flex items-center justify-between">
+              <p className="meta hidden text-foreground/50 md:block">Six crafts — one standard</p>
+              <Link
+                to="/services"
+                className="meta border-b border-foreground/40 pb-1 text-[10px] text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
+              >
+                Explore all services
+              </Link>
+            </div>
           </div>
         </div>
       </div>
