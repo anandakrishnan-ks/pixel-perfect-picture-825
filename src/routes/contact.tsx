@@ -161,7 +161,7 @@ function ContactPage() {
               </div>
               <div>
                 <p className="meta text-foreground/50">Location</p>
-                <p className="mt-4 text-base font-light leading-relaxed text-foreground/80">
+                <p className="lead mt-4 text-base leading-relaxed text-foreground/80">
                   Thiruvananthapuram, Kerala, India
                 </p>
                 <p className="meta mt-3 text-[10px] text-foreground/45">
@@ -170,7 +170,7 @@ function ContactPage() {
               </div>
               <div>
                 <p className="meta text-foreground/50">What happens next</p>
-                <p className="mt-4 text-base font-light leading-relaxed text-foreground/70">
+                <p className="lead mt-4 text-base leading-relaxed text-foreground/70">
                   Tell us the story, the screen it's meant for and the budget you have in mind.
                   We'll come back with a plan — and a picture of what it can become.
                 </p>

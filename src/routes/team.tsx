@@ -75,7 +75,7 @@ function TeamPage() {
               {FOUNDER.message.length > 0 && (
                 <div className="mt-8 max-w-xl space-y-4 border-l border-hairline pl-6">
                   {FOUNDER.message.map((para, i) => (
-                    <p key={i} className="text-base font-light leading-relaxed text-foreground/70">
+                    <p key={i} className="lead text-base leading-relaxed text-foreground/70">
                       {para}
                     </p>
                   ))}
@@ -99,8 +99,8 @@ function TeamPage() {
           <div className="grid grid-cols-1 gap-px bg-foreground/10 md:grid-cols-3">
             {TEAM_MEMBERS.map((m) => (
               <div key={m.role} data-reveal className="group bg-background p-8 transition-colors duration-700 hover:bg-card">
-                <h3 className="display text-2xl text-foreground md:text-3xl">{m.role}</h3>
-                <p className="mt-4 text-sm font-light leading-relaxed text-foreground/60">{m.desc}</p>
+                <h3 className="subhead text-2xl text-foreground md:text-3xl">{m.role}</h3>
+                <p className="lead mt-4 text-sm leading-relaxed text-foreground/60">{m.desc}</p>
               </div>
             ))}
           </div>

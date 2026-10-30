@@ -53,14 +53,14 @@ export function FounderSection() {
             {FOUNDER.quote && (
               <blockquote className="relative mt-12 pl-10">
                 <span aria-hidden className="display absolute -top-4 left-0 text-6xl leading-none text-foreground/25">“</span>
-                <p className="text-2xl font-light leading-snug text-foreground md:text-3xl">{FOUNDER.quote}</p>
+                <p className="pull text-2xl leading-snug text-foreground md:text-3xl">{FOUNDER.quote}</p>
               </blockquote>
             )}
 
             {hasMessage && (
               <div className="mt-10 max-w-xl space-y-5 border-l border-hairline pl-6">
                 {FOUNDER.message.map((para, i) => (
-                  <p key={i} className="text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+                  <p key={i} className="lead text-base leading-relaxed text-foreground/70 md:text-lg">
                     {para}
                   </p>
                 ))}
@@ -68,7 +68,7 @@ export function FounderSection() {
             )}
 
             {FOUNDER.bio && (
-              <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/60">{FOUNDER.bio}</p>
+              <p className="lead mt-8 max-w-xl text-base leading-relaxed text-foreground/60">{FOUNDER.bio}</p>
             )}
 
             {(hasMessage || FOUNDER.quote) && (

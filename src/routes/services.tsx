@@ -85,7 +85,7 @@ function ServiceBlock({ group, index }: { group: (typeof SERVICE_GROUPS)[number]
             <h2 data-reveal className="display mt-5 text-[8.5vw] leading-[0.95] text-foreground md:text-[3.4vw]">
               {group.title}
             </h2>
-            <p data-reveal className="mt-6 max-w-md text-base font-light leading-relaxed text-foreground/70">
+            <p data-reveal className="lead mt-6 max-w-md text-base leading-relaxed text-foreground/70">
               {group.desc}
             </p>
             <ul data-reveal className="mt-8 max-w-md space-y-0">
@@ -94,7 +94,7 @@ function ServiceBlock({ group, index }: { group: (typeof SERVICE_GROUPS)[number]
                   key={item}
                   className="flex items-baseline justify-between border-b border-hairline py-3"
                 >
-                  <span className="text-sm font-light text-foreground/85 md:text-base">{item}</span>
+                  <span className="lead text-sm text-foreground/85 md:text-base">{item}</span>
                   <span className="meta text-[9px] text-foreground/30">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -125,7 +125,7 @@ function ServicesPage() {
                 <li key={g.n}>
                   <a href={`#${g.title.toLowerCase().replace(/[^a-z]+/g, "-")}`} className="group flex items-baseline gap-6 border-b border-hairline py-5 transition-colors hover:bg-foreground/5">
                     <span className="meta text-foreground/40">{g.n}</span>
-                    <span className="display text-2xl text-foreground/80 transition-all group-hover:translate-x-2 group-hover:text-foreground md:text-3xl">{g.title}</span>
+                    <span className="subhead text-2xl text-foreground/80 transition-all group-hover:translate-x-2 group-hover:text-foreground md:text-3xl">{g.title}</span>
                   </a>
                 </li>
               ))}

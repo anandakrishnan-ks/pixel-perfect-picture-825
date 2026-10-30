@@ -91,7 +91,7 @@ function WorkPage() {
               <p className="display text-3xl text-foreground/80 md:text-5xl">
                 {filter} — the next reel is being cut.
               </p>
-              <p className="max-w-md text-base font-light leading-relaxed text-foreground/60">
+              <p className="lead max-w-md text-base leading-relaxed text-foreground/60">
                 We're working on new {filter.toLowerCase()} projects right now. Ask us what's in
                 production — or bring yours to us first.
               </p>
