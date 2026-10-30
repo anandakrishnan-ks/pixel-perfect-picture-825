@@ -10,6 +10,8 @@ export const FOUNDER = {
   bio: "",
   vision: "",
   quote: "",
+  /** Founder message paragraphs — add Ajmal's real words here; the block stays hidden while empty. */
+  message: [] as string[],
   photo: founderPhoto.url as string | null,
 };
 
