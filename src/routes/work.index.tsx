@@ -42,11 +42,12 @@ function WorkPage() {
     <main className="bg-background">
       <PageHero
         label="Work"
+        number="03"
+        variant="outline"
+        aside={<p className="meta text-foreground/50">{PROJECTS.length} projects — 2023 → 2025</p>}
         title={
           <>
-            SELECTED
-            <br />
-            WORK.
+            WORK
           </>
         }
         sub="Films, campaigns and photography — 2023 to 2025. More work is being cut right now."

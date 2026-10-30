@@ -58,6 +58,9 @@ function AboutPage() {
       <main className="bg-background">
         <PageHero
           label="About"
+          number="01"
+          variant="split"
+          aside={<p className="meta text-foreground/50">Thiruvananthapuram — Kerala — Beyond</p>}
           title={
             <>
               WE ARE SAN MEDIA
