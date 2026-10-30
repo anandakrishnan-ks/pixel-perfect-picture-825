@@ -88,12 +88,9 @@ export function Hero() {
             height={72}
             className="mb-8 h-14 w-14 object-contain md:h-20 md:w-20"
           />
-          <h1 className="display text-[15vw] leading-none tracking-[0.04em] text-foreground md:text-[9.5vw]">
-            SAN MEDIA
+          <h1 className="display whitespace-nowrap text-[9.6vw] leading-none tracking-[0.03em] text-foreground md:text-[7.4vw]">
+            SAN MEDIA COMPANY
           </h1>
-          <p className="display mt-2 text-[6vw] leading-none tracking-[0.32em] text-foreground/90 md:text-[3.4vw]">
-            COMPANY
-          </p>
           <p className="mt-8 text-lg font-light tracking-wide text-foreground/90 md:text-2xl">
             Films. Stories. Brands. Visual Experiences.
           </p>

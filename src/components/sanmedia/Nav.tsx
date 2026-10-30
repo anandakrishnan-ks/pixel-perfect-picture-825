@@ -41,23 +41,23 @@ export function Nav() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 mix-blend-difference text-[#f5f4f0] transition-[padding] duration-700 ${
-          scrolled ? "py-4" : "py-7"
+          scrolled ? "py-4" : "py-8"
         }`}
       >
         <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-6 lg:px-12">
           <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="SAN MEDIA COMPANY — home">
-            <img src={markWhite.url} alt="" width={30} height={30} className="h-7 w-7 object-contain" />
-            <span className="display text-base tracking-[0.08em] md:text-lg">SAN MEDIA COMPANY</span>
+            <img src={markWhite.url} alt="" width={30} height={30} className="h-8 w-8 object-contain lg:h-10 lg:w-10" />
+            <span className="display text-base tracking-[0.08em] md:text-xl lg:text-2xl">SAN MEDIA COMPANY</span>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-10 lg:flex xl:gap-14" aria-label="Primary">
             {LINKS.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 activeOptions={{ exact: false }}
-                className="meta text-[10px] text-[#f5f4f0]/70 transition-colors hover:text-[#f5f4f0]"
-                activeProps={{ className: "text-[#f5f4f0]" }}
+                className="relative font-sans text-[13px] font-extrabold uppercase tracking-[0.22em] text-[#f5f4f0]/75 transition-colors after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-[#f5f4f0] after:transition-all after:duration-500 hover:text-[#f5f4f0] hover:after:w-full"
+                activeProps={{ className: "!text-[#f5f4f0] after:!w-full" }}
               >
                 {l.label}
               </Link>
@@ -66,7 +66,7 @@ export function Nav() {
 
           <Link
             to="/contact"
-            className="meta hidden shrink-0 border border-[#f5f4f0]/40 px-5 py-2.5 text-[10px] transition-colors hover:bg-[#f5f4f0]/10 lg:block"
+            className="hidden shrink-0 bg-[#f5f4f0] px-7 py-3.5 font-sans text-[12px] font-extrabold uppercase tracking-[0.22em] text-[#0a0a0a] transition-opacity hover:opacity-85 lg:block"
           >
             Start a Project
           </Link>
