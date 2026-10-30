@@ -33,11 +33,6 @@ export function Contact() {
           </a>
           <span className="meta text-foreground/50">Trivandrum, Kerala — India</span>
         </div>
-
-        <div data-reveal className="mt-24 flex items-center gap-3">
-          <img src={markWhite.url} alt="" width={28} height={28} className="h-6 w-6 object-contain" />
-          <span className="display text-lg tracking-[0.08em] text-foreground">SAN MEDIA COMPANY</span>
-        </div>
       </div>
     </section>
   );
