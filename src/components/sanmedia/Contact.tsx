@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { revealChildren } from "./anim";
-import markWhite from "@/assets/sanmedia-mark-white.png.asset.json";
 
 /** Home closing CTA — the shared site footer lives in the root layout. */
 export function Contact() {
