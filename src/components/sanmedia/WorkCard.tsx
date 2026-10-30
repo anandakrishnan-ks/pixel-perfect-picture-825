@@ -17,12 +17,15 @@ export function WorkCard({
   eager = false,
   ratio = "808 / 632",
   className = "",
+  caption = "row",
 }: {
   project: Project;
   span?: string;
   eager?: boolean;
   ratio?: string;
   className?: string;
+  /** "row" = title and label side by side; "stack" = fixed-height caption for masonry. */
+  caption?: "row" | "stack";
 }) {
   const ref = useRef<HTMLElement>(null);
 
