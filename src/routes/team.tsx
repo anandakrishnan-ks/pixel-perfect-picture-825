@@ -84,7 +84,7 @@ function TeamPage() {
               <div className="mt-8 flex items-center gap-4">
                 <span className="h-px w-12 bg-foreground/50" />
                 <div>
-                  <span className="display block text-base tracking-[0.12em] text-foreground">— {FOUNDER.name}</span>
+                  <span className="display block text-[1rem] tracking-[0.12em] text-foreground">— {FOUNDER.name}</span>
                   <span className="meta mt-1 block text-[10px] text-foreground/50">{FOUNDER.title}, SAN MEDIA COMPANY</span>
                 </div>
               </div>

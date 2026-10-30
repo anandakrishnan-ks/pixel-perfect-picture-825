@@ -6,7 +6,7 @@
 
 /*
  * SAN MEDIA COMPANY design system — cinematic monochrome.
- * Display: Anton (huge condensed headlines). Body: Manrope. Metadata: Space Mono.
+ * Display: Anton (huge condensed headlines). Body: Hanken Grotesk. Metadata: Space Mono.
  * All colors are oklch semantic tokens.
  */
 
@@ -41,8 +41,24 @@
   --color-ink: var(--ink);
   --color-hairline: var(--hairline);
   --font-display: "Anton", "Arial Narrow", sans-serif;
-  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
+}
+
+/*
+ * Body text scale — slightly smaller, cleaner and calmer than the Tailwind defaults.
+ * Only the reading sizes move; display headings (.display, text-2xl and up) keep
+ * their existing sizes, and the .display / .meta utilities keep their own tracking.
+ */
+@theme {
+  --text-xs: 0.6875rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.0625rem;
+  --text-lg--line-height: 1.6;
 }
 
 :root {
@@ -85,8 +101,16 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    letter-spacing: -0.004em;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     overflow-x: clip;
+  }
+
+  /* Keep paragraph line endings even — no stray one-word last lines. */
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {

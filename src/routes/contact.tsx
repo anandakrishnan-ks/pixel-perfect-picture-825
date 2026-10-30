@@ -58,7 +58,7 @@ const BUDGETS = ["Under ₹1 lakh", "₹1–5 lakh", "₹5–20 lakh", "₹20 la
 const TIMELINES = ["As soon as possible", "Within 1 month", "1–3 months", "3–6 months", "Flexible"];
 
 const inputCls =
-  "w-full border-b border-hairline bg-transparent py-3 text-base font-light text-foreground placeholder:text-foreground/30 focus:border-foreground focus:outline-none transition-colors";
+  "w-full border-b border-hairline bg-transparent py-3 text-[1rem] font-light text-foreground placeholder:text-foreground/30 focus:border-foreground focus:outline-none transition-colors";
 
 type FormState = {
   name: string;
@@ -132,7 +132,7 @@ function ContactPage() {
           number="05"
           variant="statement"
           aside={
-            <a href="mailto:contact@sanmediacompany.in" className="display block break-all text-[7vw] leading-none text-foreground/90 underline decoration-foreground/20 underline-offset-[0.2em] transition-colors hover:decoration-foreground md:text-[4.2vw]">
+            <a href="mailto:contact@sanmediacompany.in" className="display block break-all text-[clamp(1.05rem,6.2vw,1.75rem)] leading-none text-foreground/90 underline decoration-foreground/20 underline-offset-[0.2em] transition-colors hover:decoration-foreground md:text-[4.2vw]">
               contact@sanmediacompany.in
             </a>
           }
@@ -150,11 +150,11 @@ function ContactPage() {
           <div className="grid gap-16 border-t border-hairline pt-16 md:grid-cols-12">
             {/* Info column */}
             <div data-reveal className="space-y-10 md:col-span-4">
-              <div>
+              <div className="@container">
                 <p className="meta text-foreground/50">Email</p>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="display mt-4 block break-all text-2xl text-foreground transition-opacity hover:opacity-80 md:text-3xl"
+                  className="display mt-4 block break-all text-[clamp(0.95rem,7.4cqw,1.85rem)] text-foreground transition-opacity hover:opacity-80"
                 >
                   {EMAIL}
                 </a>
