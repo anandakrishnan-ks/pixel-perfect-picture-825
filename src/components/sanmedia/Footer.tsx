@@ -14,68 +14,103 @@ const NAV = [
   { label: "Contact", to: "/contact" },
 ] as const;
 
+const linkCls =
+  "group relative inline-flex w-fit items-center gap-2 text-sm font-light text-foreground/65 transition-colors duration-300 hover:text-foreground";
+
 export function Footer() {
   const ref = useRef<HTMLElement>(null);
   revealChildren(ref);
 
   return (
-    <footer ref={ref} className="relative bg-background">
+    <footer ref={ref} className="relative overflow-hidden bg-background">
       <div className="mx-auto max-w-[1500px] px-6 lg:px-12">
-        <div data-reveal className="flex flex-wrap items-end justify-between gap-10 border-t border-hairline pt-14">
+        {/* CTA band */}
+        <div
+          data-reveal
+          className="flex flex-col items-start justify-between gap-8 border-t border-hairline py-16 md:flex-row md:items-end md:py-20"
+        >
           <div>
-            <div className="flex items-center gap-3">
-              <img src={markWhite.url} alt="" width={28} height={28} className="h-6 w-6 object-contain" />
-              <span className="display text-xl tracking-[0.08em] text-foreground">SAN MEDIA COMPANY</span>
-            </div>
-            <p className="meta mt-4 text-[10px] text-foreground/50">
-              Film • Advertising • Production • Visual Storytelling
-            </p>
-          </div>
-
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-10 gap-y-3">
-            {NAV.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="meta text-[10px] text-foreground/60 transition-colors hover:text-foreground"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
-        <div data-reveal className="mt-12 flex flex-wrap items-start justify-between gap-8">
-          <div className="space-y-2">
+            <p className="meta text-[10px] text-foreground/50">Have a story to tell?</p>
             <a
               href="mailto:contact@sanmediacompany.in"
-              className="display block text-2xl text-foreground transition-opacity hover:opacity-80 md:text-3xl"
+              className="display mt-4 block break-all text-[8vw] leading-none text-foreground transition-opacity hover:opacity-75 md:text-[4.2vw]"
             >
               contact@sanmediacompany.in
             </a>
-            <p className="meta text-[10px] text-foreground/50">Thiruvananthapuram, Kerala, India</p>
-            <p className="meta text-[10px] text-foreground/40">Serving clients across Kerala and beyond</p>
           </div>
-          <nav className="flex flex-wrap gap-x-8 gap-y-2" aria-label="Social profiles">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="meta text-[10px] text-foreground/60 transition-colors hover:text-foreground"
-              >
-                {s.label} ↗
-              </a>
-            ))}
-          </nav>
-          <span className="meta text-[10px] text-foreground/40">© 2026 SAN MEDIA COMPANY. All rights reserved.</span>
+          <Link
+            to="/contact"
+            className="shrink-0 bg-foreground px-8 py-4 text-xs font-extrabold uppercase tracking-[0.22em] text-background transition-opacity hover:opacity-85"
+          >
+            Start a Project
+          </Link>
         </div>
 
-        <p data-reveal aria-hidden className="wordmark-outline mt-10 select-none whitespace-nowrap text-center text-[8vw] leading-[0.9]">
+        {/* Columns */}
+        <div data-reveal className="grid grid-cols-2 gap-x-8 gap-y-12 border-t border-hairline py-14 md:grid-cols-12">
+          <div className="col-span-2 md:col-span-5">
+            <div className="flex items-center gap-3">
+              <img src={markWhite.url} alt="" width={28} height={28} className="h-7 w-7 object-contain" />
+              <span className="display text-xl tracking-[0.08em] text-foreground">SAN MEDIA COMPANY</span>
+            </div>
+            <p className="mt-5 max-w-sm text-sm font-light leading-relaxed text-foreground/55">
+              Film • Advertising • Production • Visual Storytelling. Based in Thiruvananthapuram,
+              serving clients across Kerala and beyond.
+            </p>
+          </div>
+
+          <nav aria-label="Footer" className="md:col-span-2 md:col-start-7">
+            <p className="meta mb-5 text-[10px] text-foreground/40">Pages</p>
+            <ul className="flex flex-col gap-3">
+              {NAV.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className={linkCls}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Social profiles" className="md:col-span-2">
+            <p className="meta mb-5 text-[10px] text-foreground/40">Follow</p>
+            <ul className="flex flex-col gap-3">
+              {SOCIALS.map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className={linkCls}>
+                    {s.label}
+                    <span className="text-xs transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                      ↗
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="col-span-2 md:col-span-2">
+            <p className="meta mb-5 text-[10px] text-foreground/40">Studio</p>
+            <p className="text-sm font-light leading-relaxed text-foreground/65">
+              Thiruvananthapuram
+              <br />
+              Kerala, India
+            </p>
+          </div>
+        </div>
+
+        {/* Centred outlined wordmark */}
+        <p
+          data-reveal
+          aria-hidden
+          className="wordmark-outline select-none whitespace-nowrap text-center text-[11vw] leading-[0.85] md:text-[9.5vw]"
+        >
           SAN MEDIA COMPANY
         </p>
-        <div className="h-10" />
+
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-hairline py-6 text-center md:flex-row md:text-left">
+          <span className="meta text-[10px] text-foreground/40">© 2026 SAN MEDIA COMPANY. All rights reserved.</span>
+          <span className="meta text-[10px] text-foreground/40">Built in Trivandrum. Created across Kerala.</span>
+        </div>
       </div>
     </footer>
   );
