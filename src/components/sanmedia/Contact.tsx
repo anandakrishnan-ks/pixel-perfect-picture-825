@@ -16,7 +16,7 @@ export function Contact() {
           <br />
           YOUR FILM.
         </h2>
-        <p data-reveal className="mt-10 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+        <p data-reveal className="lead mt-10 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
           Tell us the story, the screen it's meant for and the budget you have in mind. We'll come
           back with a plan — and a picture of what it can become.
         </p>

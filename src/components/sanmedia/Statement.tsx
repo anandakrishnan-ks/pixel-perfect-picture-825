@@ -60,7 +60,7 @@ export function Statement() {
             </span>
           ))}
         </h2>
-        <p className="mt-12 max-w-xl text-base font-light leading-relaxed text-ink/70 md:text-lg">
+        <p className="lead mt-12 max-w-xl text-base leading-relaxed text-ink/70 md:text-lg">
           Your budget doesn't define the quality of your story. We create the best possible
           visual experience within it — premium cinematic production, at any scale.
         </p>

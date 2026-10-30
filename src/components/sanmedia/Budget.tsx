@@ -35,7 +35,7 @@ export function Budget() {
           <br />
           COMES FIRST.
         </h2>
-        <p data-reveal className="mt-10 max-w-xl text-base font-light leading-relaxed text-ink/70 md:text-lg">
+        <p data-reveal className="lead mt-10 max-w-xl text-base leading-relaxed text-ink/70 md:text-lg">
           From focused productions to full-scale cinematic campaigns, we build the strongest
           visual language possible within your budget.
         </p>
@@ -48,8 +48,8 @@ export function Budget() {
               className="group bg-paper p-8 transition-colors duration-700 hover:bg-ink hover:text-paper md:p-10"
             >
               <p className="meta text-ink/50 transition-colors group-hover:text-paper/60">{t.n}</p>
-              <h3 className="display mt-6 text-4xl md:text-5xl">{t.name}</h3>
-              <ul className="mt-8 space-y-2 text-sm font-light leading-relaxed md:text-base">
+              <h3 className="subhead mt-6 text-4xl md:text-5xl">{t.name}</h3>
+              <ul className="lead mt-8 space-y-2 text-sm leading-relaxed md:text-base">
                 {t.lines.map((l) => (
                   <li key={l}>{l}</li>
                 ))}

@@ -23,7 +23,7 @@ export function About() {
           <br />
           Created across Kerala.
         </h2>
-        <p data-reveal className="mt-10 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+        <p data-reveal className="lead mt-10 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
           SAN MEDIA COMPANY is a creative media and production company from Thiruvananthapuram —
           directors, cinematographers, colourists and editors working under one obsession: images
           that carry feeling first and information second. From the capital city to the coast, hills

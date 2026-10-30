@@ -98,7 +98,7 @@ export function Services() {
                   <h3 className="display text-[7.5vw] leading-none text-foreground md:text-[4.6vw] lg:text-[3.8vw]">
                     {s.title}
                   </h3>
-                  <span className="ml-auto hidden shrink-0 text-sm font-light text-foreground/60 md:block">
+                  <span className="pull ml-auto hidden shrink-0 text-sm text-foreground/60 md:block">
                     {s.desc}
                   </span>
                 </div>

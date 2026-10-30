@@ -118,7 +118,7 @@ export function Story() {
               >
                 <p className="meta text-foreground/60">{s.n}</p>
                 <h3 className="display mt-3 text-5xl text-foreground md:text-7xl">{s.title}</h3>
-                <p className="mt-4 max-w-md text-base font-light text-foreground/75 md:text-lg">
+                <p className="pull mt-4 max-w-md text-lg text-foreground/75 md:text-xl">
                   {s.quote}
                 </p>
               </div>
