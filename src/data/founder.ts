@@ -10,12 +10,21 @@ export const FOUNDER = {
   bio: "",
   vision: "",
   quote: "",
+  /** Condensed note shown on About and Team — kept short so it sits level with the portrait. */
   message: [
+    "I started SAN MEDIA COMPANY in Thiruvananthapuram with a simple belief — every story deserves to be told with honesty, intention, and a perspective of its own.",
+    "For every client we work with, the story comes first. We take the time to understand what makes a brand, person, or idea unique — and translate that into work that feels authentic, not manufactured.",
+    "As we grow, one thing never changes: the standard we hold ourselves to. Every brief, large or small, gets the same attention to detail, creativity, and commitment to doing the work right.",
+    "Thank you for considering SAN MEDIA COMPANY. Whether you're here from Thiruvananthapuram, across Kerala, or beyond, we'd be honoured to hear your story.",
+  ] as string[],
+  /** Full founder's note as supplied — kept for reference, not rendered. */
+  messageFull: [
     "I started SAN MEDIA COMPANY in Thiruvananthapuram with a simple belief — every story deserves to be told with honesty, intention, and a perspective of its own. What began as a passion for visual storytelling has grown into a space where ideas can take shape and connect with people in a meaningful way.",
     "For every client we work with, the story comes first. We take the time to understand what makes a brand, person, or idea unique, and translate that into work that feels authentic rather than manufactured. We believe the best stories aren't just seen — they are felt.",
     "As we grow, one thing will never change: the standard we hold ourselves to. Whether it's a large production or a small project, we approach every brief with the same attention to detail, creativity, and commitment to doing the work right.",
     "Thank you for considering SAN MEDIA COMPANY. Whether you're here from Thiruvananthapuram, somewhere across Kerala, or beyond, we'd be honoured to hear your story and explore what we can create together.",
   ] as string[],
+
   photo: founderPhoto.url as string | null,
 };
 

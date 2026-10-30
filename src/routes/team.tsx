@@ -54,9 +54,9 @@ function TeamPage() {
 
         <div ref={ref} className="mx-auto max-w-[1500px] px-6 pb-32 lg:px-12">
           {/* Founder — visually distinct */}
-          <section data-reveal className="grid gap-10 border-t border-hairline pt-16 md:grid-cols-12">
+          <section data-reveal className="grid items-stretch gap-10 border-t border-hairline pt-16 md:grid-cols-12">
             <div className="md:col-span-5">
-              <div className="grain relative flex aspect-[3/4] items-center justify-center overflow-hidden border border-hairline bg-card">
+              <div className="grain relative flex h-full min-h-[420px] items-center justify-center overflow-hidden border border-hairline bg-card">
                 {FOUNDER.photo ? (
                   <img src={FOUNDER.photo} alt={`${FOUNDER.name} — ${FOUNDER.title}`} className="h-full w-full object-cover object-[center_30%]" loading="lazy" />
                 ) : (
@@ -68,15 +68,26 @@ function TeamPage() {
                 )}
               </div>
             </div>
-            <div className="md:col-span-6 md:col-start-7">
-              <p className="meta text-foreground/50">{FOUNDER.title}</p>
-              <h2 className="display mt-4 text-6xl text-foreground md:text-7xl">{FOUNDER.name}</h2>
-              {FOUNDER.bio && (<p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
-                {FOUNDER.bio}
-              </p>)}
-              {FOUNDER.quote && (<blockquote className="mt-8 border-l-2 border-foreground/30 pl-6 text-xl font-light leading-relaxed text-foreground/85 md:text-2xl">
-                {FOUNDER.quote}
-              </blockquote>)}
+            <div className="flex flex-col justify-center md:col-span-6 md:col-start-7">
+              <p className="meta text-foreground/50">A note from the founder</p>
+              <h2 className="display mt-4 text-5xl text-foreground md:text-6xl">{FOUNDER.name}</h2>
+              <p className="meta mt-3 text-xs text-foreground/60">{FOUNDER.title}</p>
+              {FOUNDER.message.length > 0 && (
+                <div className="mt-8 max-w-xl space-y-4 border-l border-hairline pl-6">
+                  {FOUNDER.message.map((para, i) => (
+                    <p key={i} className="text-base font-light leading-relaxed text-foreground/70">
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              )}
+              <div className="mt-8 flex items-center gap-4">
+                <span className="h-px w-12 bg-foreground/50" />
+                <div>
+                  <span className="display block text-base tracking-[0.12em] text-foreground">— {FOUNDER.name}</span>
+                  <span className="meta mt-1 block text-[10px] text-foreground/50">{FOUNDER.title}, SAN MEDIA COMPANY</span>
+                </div>
+              </div>
             </div>
           </section>
 
