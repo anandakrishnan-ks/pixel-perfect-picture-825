@@ -76,7 +76,7 @@ export function Services() {
               loading="lazy"
               width={1536}
               height={1024}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover grayscale"
             />
             <div className="absolute inset-0 bg-background/62" />
           </div>

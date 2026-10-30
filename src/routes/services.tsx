@@ -74,7 +74,7 @@ function ServiceBlock({ group, index }: { group: (typeof SERVICE_GROUPS)[number]
                 loading="lazy"
                 width={1536}
                 height={1024}
-                className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04]"
+                className="h-full w-full object-cover grayscale transition-[transform,filter] duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04] hover:grayscale-0"
               />
             </div>
           </div>
