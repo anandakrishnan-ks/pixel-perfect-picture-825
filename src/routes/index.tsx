@@ -45,6 +45,7 @@ export const Route = createFileRoute("/")({
           name: "SAN MEDIA COMPANY",
           url: `${SITE}/`,
           email: "contact@sanmediacompany.in",
+          sameAs: ["https://www.instagram.com/sanmediacompany/", "https://www.youtube.com/@sanmediacompany", "https://www.behance.net/sanmediacompany1"],
           description:
             "Creative media and production company based in Thiruvananthapuram, Kerala, serving clients across Kerala and beyond.",
           address: {

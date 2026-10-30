@@ -59,13 +59,13 @@ export function WorkCard({
         className="group block"
         aria-label={`Open project ${project.title}`}
       >
-        <div className="grain relative aspect-[16/10] overflow-hidden bg-card">
+        <div className="grain relative aspect-[808/632] overflow-hidden bg-card">
           <img
             src={project.img}
             alt={`${project.title} — ${project.category}`}
             loading={eager ? "eager" : "lazy"}
-            width={1536}
-            height={1024}
+            width={808}
+            height={632}
             className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045]"
           />
           <div className="absolute inset-0 bg-background/0 transition-colors duration-700 group-hover:bg-background/10" />
@@ -78,7 +78,7 @@ export function WorkCard({
             {project.title}
           </h3>
           <span className="meta text-foreground/50">
-            {project.category} — {project.year}
+            {project.category} — {project.client}
           </span>
         </div>
       </Link>

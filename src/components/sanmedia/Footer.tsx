@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import markWhite from "@/assets/sanmedia-mark-white.png.asset.json";
 import { revealChildren } from "./anim";
+import { SOCIALS } from "@/data/projects";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -55,15 +56,23 @@ export function Footer() {
             <p className="meta text-[10px] text-foreground/50">Thiruvananthapuram, Kerala, India</p>
             <p className="meta text-[10px] text-foreground/40">Serving clients across Kerala and beyond</p>
           </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-2" aria-label="Social profiles (links to be added)">
-            <span className="meta text-[10px] text-foreground/40">Instagram — link to be added</span>
-            <span className="meta text-[10px] text-foreground/40">YouTube — link to be added</span>
-            <span className="meta text-[10px] text-foreground/40">LinkedIn — link to be added</span>
-          </div>
+          <nav className="flex flex-wrap gap-x-8 gap-y-2" aria-label="Social profiles">
+            {SOCIALS.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="meta text-[10px] text-foreground/60 transition-colors hover:text-foreground"
+              >
+                {s.label} ↗
+              </a>
+            ))}
+          </nav>
           <span className="meta text-[10px] text-foreground/40">© 2026 SAN MEDIA COMPANY. All rights reserved.</span>
         </div>
 
-        <p data-reveal aria-hidden className="wordmark-outline mt-10 select-none whitespace-nowrap text-[8vw] leading-[0.9]">
+        <p data-reveal aria-hidden className="wordmark-outline mt-10 select-none whitespace-nowrap text-center text-[8vw] leading-[0.9]">
           SAN MEDIA COMPANY
         </p>
         <div className="h-10" />

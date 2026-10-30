@@ -77,7 +77,7 @@ function ProjectPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/40" />
           <div className="absolute bottom-10 left-6 right-6 lg:left-12">
             <p className="meta text-foreground/70">
-              {project.category} — {project.year}
+              {project.category} — {project.client}
             </p>
             <h1 className="display mt-4 text-[12vw] leading-none text-foreground md:text-[7.5vw]">
               {project.title}
@@ -89,7 +89,7 @@ function ProjectPage() {
         <section className="mx-auto max-w-[1500px] px-6 py-24 md:py-36 lg:px-12">
           <div className="grid gap-12 md:grid-cols-12">
             <div className="md:col-span-7">
-              <p className="meta text-foreground/60">The film</p>
+              <p className="meta text-foreground/60">The project</p>
               <p className="mt-8 text-lg font-light leading-relaxed text-foreground/80 md:text-2xl md:leading-relaxed">
                 {project.desc}
               </p>
@@ -100,15 +100,23 @@ function ProjectPage() {
                 <p className="mt-2 text-sm font-light text-foreground/85">{project.category}</p>
               </div>
               <div className="border-t border-hairline pt-5">
-                <p className="meta text-foreground/50">Year</p>
-                <p className="mt-2 text-sm font-light text-foreground/85">{project.year}</p>
+                <p className="meta text-foreground/50">Client</p>
+                <p className="mt-2 text-sm font-light text-foreground/85">{project.client}</p>
               </div>
               <div className="border-t border-hairline pt-5">
                 <p className="meta text-foreground/50">Full credits</p>
                 <p className="mt-2 text-sm font-light text-foreground/85">
-                  Available on request — contact@sanmediacompany.in
+                  Full project on Behance — credits on request at contact@sanmediacompany.in
                 </p>
               </div>
+              <a
+                href={project.behance}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mr-4 inline-block bg-foreground px-7 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-85"
+              >
+                View on Behance ↗
+              </a>
               <Link
                 to="/contact"
                 className="inline-block border border-foreground/40 px-7 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10"
@@ -133,7 +141,7 @@ function ProjectPage() {
               </p>
             </div>
             <span className="meta pb-2 text-foreground/50 transition-transform duration-700 group-hover:translate-x-3">
-              {next.category} — {next.year} ▶
+              {next.category} — {next.client} ▶
             </span>
           </Link>
         </section>

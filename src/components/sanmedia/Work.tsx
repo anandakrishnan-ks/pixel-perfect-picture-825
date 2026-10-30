@@ -24,7 +24,7 @@ export function Work() {
             Work
           </h2>
           <div className="flex items-center gap-6 pb-3">
-            <p className="meta hidden text-foreground/50 md:block">Films — 2023 → 2025</p>
+            <p className="meta hidden text-foreground/50 md:block">From our Behance portfolio</p>
             <Link
               to="/work"
               className="meta border-b border-foreground/40 pb-1 text-[10px] text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"

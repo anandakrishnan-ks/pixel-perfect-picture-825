@@ -58,7 +58,7 @@ function TeamPage() {
             <div className="md:col-span-5">
               <div className="grain relative flex aspect-[3/4] items-center justify-center overflow-hidden border border-hairline bg-card">
                 {FOUNDER.photo ? (
-                  <img src={FOUNDER.photo} alt={`${FOUNDER.name} — ${FOUNDER.title}`} className="h-full w-full object-cover" />
+                  <img src={FOUNDER.photo} alt={`${FOUNDER.name} — ${FOUNDER.title}`} className="h-full w-full object-cover object-[center_30%]" loading="lazy" />
                 ) : (
                   <p className="meta px-8 text-center text-[10px] leading-loose text-foreground/40">
                     Founder portrait

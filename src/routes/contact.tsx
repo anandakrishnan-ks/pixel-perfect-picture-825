@@ -37,6 +37,7 @@ export const Route = createFileRoute("/contact")({
           "@type": "LocalBusiness",
           name: "SAN MEDIA COMPANY",
           email: EMAIL,
+          sameAs: ["https://www.instagram.com/sanmediacompany/", "https://www.youtube.com/@sanmediacompany", "https://www.behance.net/sanmediacompany1"],
           url: `${SITE}/`,
           address: {
             "@type": "PostalAddress",

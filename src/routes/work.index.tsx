@@ -21,7 +21,7 @@ export const Route = createFileRoute("/work/")({
       {
         property: "og:description",
         content:
-          "Films, campaigns and photography from a Kerala-based creative production house — 2023 to 2025.",
+          "Films, campaigns and photography from a Kerala-based creative production house — the full SAN MEDIA COMPANY Behance portfolio.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE}/work` },
@@ -44,13 +44,13 @@ function WorkPage() {
         label="Work"
         number="03"
         variant="outline"
-        aside={<p className="meta text-foreground/50">{PROJECTS.length} projects — 2023 → 2025</p>}
+        aside={<p className="meta text-foreground/50">{PROJECTS.length} projects — via Behance</p>}
         title={
           <>
             WORK
           </>
         }
-        sub="Films, campaigns and photography — 2023 to 2025. More work is being cut right now."
+        sub="Films, campaigns and photography — the full SAN MEDIA COMPANY Behance portfolio. More work is being cut right now."
       />
 
       {/* Category filter */}
