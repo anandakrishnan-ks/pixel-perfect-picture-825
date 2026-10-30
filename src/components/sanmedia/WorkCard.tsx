@@ -88,7 +88,7 @@ export function WorkCard({
         </div>
         {caption === "stack" ? (
           <div className="mt-5 flex h-[112px] flex-col justify-between gap-3 border-t border-hairline pt-4">
-            <h3 className="display line-clamp-2 leading-[1.12] text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
+            <h3 className="subhead line-clamp-2 leading-[1.15] text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
               {project.title}
             </h3>
             <span className="meta leading-snug text-foreground/50">
@@ -97,7 +97,7 @@ export function WorkCard({
           </div>
         ) : (
           <div className="mt-5 flex items-baseline justify-between gap-6 border-t border-hairline pt-4">
-            <h3 className="display text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
+            <h3 className="subhead text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
               {project.title}
             </h3>
             <span className="meta shrink-0 text-right text-foreground/50">

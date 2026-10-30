@@ -87,18 +87,18 @@ function AboutPage() {
               </h2>
             </div>
             <div className="space-y-8 md:col-span-6 md:col-start-6">
-              <p data-reveal className="text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+              <p data-reveal className="lead text-base leading-relaxed text-foreground/70 md:text-lg">
                 We are directors, cinematographers, colourists, editors and photographers working
                 under one roof and one obsession — images that carry feeling first and information
                 second. Whether it's a 30-second commercial or a full documentary, every frame is
                 composed, lit and cut with intent.
               </p>
-              <p data-reveal className="text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+              <p data-reveal className="lead text-base leading-relaxed text-foreground/70 md:text-lg">
                 Our approach to production is simple: understand the story before touching a camera.
                 We develop the concept, the script and the visual language first — so every day of
                 production and every hour of post serves one clear idea.
               </p>
-              <p data-reveal className="text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+              <p data-reveal className="lead text-base leading-relaxed text-foreground/70 md:text-lg">
                 Your budget doesn't define the quality of your story. We create the best possible
                 visual experience within it — premium cinematic production, at any scale.
               </p>
@@ -128,7 +128,7 @@ function AboutPage() {
             <p data-reveal className="meta mt-10 text-[11px] tracking-[0.2em] text-ink/70">
               Home base: Thiruvananthapuram. Playground: Kerala.
             </p>
-            <p data-reveal className="mt-6 max-w-xl text-base font-light leading-relaxed text-ink/70 md:text-lg">
+            <p data-reveal className="lead mt-6 max-w-xl text-base leading-relaxed text-ink/70 md:text-lg">
               From the capital city to the coast, hills and cities across Kerala, SAN MEDIA COMPANY
               brings production, storytelling and visual creativity closer to brands, businesses and
               organisations wherever their story needs to be told.
@@ -162,8 +162,8 @@ function AboutPage() {
             <div data-reveal className="mt-16 grid grid-cols-1 gap-px bg-foreground/10 md:grid-cols-3">
               {TEAM_MEMBERS.slice(0, 3).map((m) => (
                 <div key={m.role} className="bg-background p-8">
-                  <h3 className="display mt-4 text-2xl text-foreground">{m.role}</h3>
-                  <p className="mt-4 text-sm font-light leading-relaxed text-foreground/60">{m.desc}</p>
+                  <h3 className="subhead mt-4 text-2xl text-foreground">{m.role}</h3>
+                  <p className="lead mt-4 text-sm leading-relaxed text-foreground/60">{m.desc}</p>
                 </div>
               ))}
             </div>

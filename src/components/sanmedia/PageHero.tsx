@@ -48,7 +48,7 @@ export function PageHero({
           <div className="lg:col-span-5">
             {aside && <div data-reveal>{aside}</div>}
             {sub && (
-              <p data-reveal className="mt-8 border-l border-foreground/30 pl-6 text-base font-light leading-relaxed text-foreground/75 md:text-lg">
+              <p data-reveal className="lead mt-8 border-l border-foreground/30 pl-6 text-base leading-relaxed text-foreground/75 md:text-lg">
                 {sub}
               </p>
             )}
@@ -68,7 +68,7 @@ export function PageHero({
               {title}
             </h1>
             {sub && (
-              <p data-reveal className="mt-8 max-w-md text-base font-light leading-relaxed text-foreground/70">
+              <p data-reveal className="lead mt-8 max-w-md text-base leading-relaxed text-foreground/70">
                 {sub}
               </p>
             )}
@@ -92,7 +92,7 @@ export function PageHero({
             {title}
           </h1>
           <div data-reveal className="mt-8 flex flex-wrap items-end justify-between gap-6">
-            {sub && <p className="max-w-md text-base font-light leading-relaxed text-foreground/70">{sub}</p>}
+            {sub && <p className="lead max-w-md text-base leading-relaxed text-foreground/70">{sub}</p>}
             {aside}
           </div>
         </div>
@@ -109,7 +109,7 @@ export function PageHero({
             {title}
           </h1>
           {sub && (
-            <p data-reveal className="mx-auto mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+            <p data-reveal className="lead mx-auto mt-8 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
               {sub}
             </p>
           )}
@@ -128,7 +128,7 @@ export function PageHero({
             {title}
           </h1>
           <div data-reveal className="mt-12 flex flex-wrap items-end justify-between gap-8 border-t border-paper-foreground/20 pt-8">
-            {sub && <p className="max-w-lg text-base font-light leading-relaxed text-paper-foreground/75 md:text-lg">{sub}</p>}
+            {sub && <p className="lead max-w-lg text-base leading-relaxed text-paper-foreground/75 md:text-lg">{sub}</p>}
             {aside}
           </div>
         </div>
@@ -145,7 +145,7 @@ export function PageHero({
           {title}
         </h1>
         {sub && (
-          <p data-reveal className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+          <p data-reveal className="lead mt-8 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
             {sub}
           </p>
         )}

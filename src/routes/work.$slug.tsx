@@ -90,22 +90,22 @@ function ProjectPage() {
           <div className="grid gap-12 md:grid-cols-12">
             <div className="md:col-span-7">
               <p className="meta text-foreground/60">The project</p>
-              <p className="mt-8 text-lg font-light leading-relaxed text-foreground/80 md:text-2xl md:leading-relaxed">
+              <p className="lead mt-8 text-lg leading-relaxed text-foreground/80 md:text-2xl md:leading-relaxed">
                 {project.desc}
               </p>
             </div>
             <div className="space-y-6 md:col-span-4 md:col-start-9">
               <div className="border-t border-hairline pt-5">
                 <p className="meta text-foreground/50">Category</p>
-                <p className="mt-2 text-sm font-light text-foreground/85">{project.category}</p>
+                <p className="lead mt-2 text-sm text-foreground/85">{project.category}</p>
               </div>
               <div className="border-t border-hairline pt-5">
                 <p className="meta text-foreground/50">Client</p>
-                <p className="mt-2 text-sm font-light text-foreground/85">{project.client}</p>
+                <p className="lead mt-2 text-sm text-foreground/85">{project.client}</p>
               </div>
               <div className="border-t border-hairline pt-5">
                 <p className="meta text-foreground/50">Full credits</p>
-                <p className="mt-2 text-sm font-light text-foreground/85">
+                <p className="lead mt-2 text-sm text-foreground/85">
                   Full project on Behance — credits on request at contact@sanmediacompany.in
                 </p>
               </div>

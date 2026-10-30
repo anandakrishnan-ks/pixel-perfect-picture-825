@@ -39,8 +39,8 @@ Content rule: nothing is invented. Clients, credits, awards, statistics and biog
 
 - Dark, monochrome editorial look with film-grain overlay (`GrainOverlay.tsx`) and hairline borders.
 - All colours are semantic tokens (`--background`, `--foreground`, `--hairline`, …) defined in `src/styles.css` in `oklch`; components never hard-code colours.
-- Utilities such as `display`, `meta`, `grain`, `wordmark-outline` and `mono-reveal` (grayscale image that reveals colour on hover).
-- **Fonts (Google Fonts, loaded in `src/routes/__root.tsx`):** Anton (display), Hanken Grotesk (body), Space Mono (meta labels).
+- Utilities such as `display`, `meta`, `lead`, `subhead`, `pull`, `grain`, `wordmark-outline` and `mono-reveal` (grayscale image that reveals colour on hover).
+- **Fonts (Google Fonts, loaded in `src/routes/__root.tsx`):** Anton (display headlines), Fraunces (editorial serif — sub-headings `.subhead`, lead/body copy `.lead`, italic pull quotes `.pull`), Hanken Grotesk (UI/body fallback, form fields), Space Mono (meta labels).
 - Mobile-first Tailwind breakpoints; fluid `vw` typography for headlines; checked at desktop (1280px) and mobile (390px) widths.
 
 ## 5. Project structure
