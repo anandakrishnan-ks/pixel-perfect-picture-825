@@ -132,7 +132,7 @@ function ContactPage() {
           number="05"
           variant="statement"
           aside={
-            <a href="mailto:contact@sanmediacompany.in" className="display block break-all text-[7vw] leading-none text-foreground/90 underline decoration-foreground/20 underline-offset-[0.2em] transition-colors hover:decoration-foreground md:text-[4.2vw]">
+            <a href="mailto:contact@sanmediacompany.in" className="display block break-all text-[clamp(1.05rem,6.2vw,1.75rem)] leading-none text-foreground/90 underline decoration-foreground/20 underline-offset-[0.2em] transition-colors hover:decoration-foreground md:text-[4.2vw]">
               contact@sanmediacompany.in
             </a>
           }
