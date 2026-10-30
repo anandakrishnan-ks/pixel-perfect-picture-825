@@ -44,7 +44,7 @@ export function FounderSection() {
 
           {/* Message */}
           <div data-reveal className="flex flex-col justify-center md:col-span-6 md:col-start-7">
-            <p className="meta text-[10px] text-foreground/50">A message from the founder</p>
+            <p className="meta text-[10px] text-foreground/50">{hasMessage || FOUNDER.quote ? "A message from the founder" : "Founder, SAN MEDIA COMPANY"}</p>
             <h2 className="display mt-6 text-[13vw] leading-[0.9] text-foreground md:text-[5.2vw]">
               {FOUNDER.name.toUpperCase()}
             </h2>
