@@ -71,28 +71,24 @@ function TeamPage() {
             <div className="md:col-span-6 md:col-start-7">
               <p className="meta text-foreground/50">{FOUNDER.title}</p>
               <h2 className="display mt-4 text-6xl text-foreground md:text-7xl">{FOUNDER.name}</h2>
-              <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+              {FOUNDER.bio && (<p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
                 {FOUNDER.bio}
-              </p>
-              <blockquote className="mt-8 border-l-2 border-foreground/30 pl-6 text-xl font-light leading-relaxed text-foreground/85 md:text-2xl">
+              </p>)}
+              {FOUNDER.quote && (<blockquote className="mt-8 border-l-2 border-foreground/30 pl-6 text-xl font-light leading-relaxed text-foreground/85 md:text-2xl">
                 {FOUNDER.quote}
-              </blockquote>
+              </blockquote>)}
             </div>
           </section>
 
           <p data-reveal className="meta mt-24 border-b border-hairline pb-5 text-[10px] text-foreground/40">
-            Crew — profiles are placeholders until each member's details are finalised
+            Roles we cover on every production
           </p>
 
           {/* Editorial role grid */}
           <div className="grid grid-cols-1 gap-px bg-foreground/10 md:grid-cols-3">
             {TEAM_MEMBERS.map((m) => (
               <div key={m.role} data-reveal className="group bg-background p-8 transition-colors duration-700 hover:bg-card">
-                <div className="flex items-baseline justify-between">
-                  <p className="meta text-foreground/40">[Name]</p>
-                  <p className="meta text-[9px] text-foreground/20">Profile link — add</p>
-                </div>
-                <h3 className="display mt-5 text-2xl text-foreground md:text-3xl">{m.role}</h3>
+                <h3 className="display text-2xl text-foreground md:text-3xl">{m.role}</h3>
                 <p className="mt-4 text-sm font-light leading-relaxed text-foreground/60">{m.desc}</p>
               </div>
             ))}
