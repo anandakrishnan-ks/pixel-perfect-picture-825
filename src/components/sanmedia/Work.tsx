@@ -1,18 +1,38 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { PROJECTS, spanFor } from "@/data/projects";
+import { PROJECTS, projectBySlug, type Project } from "@/data/projects";
 import { WorkCard } from "./WorkCard";
 import { revealChildren } from "./anim";
 
 /**
- * Home portfolio preview — the first three films from the reel,
- * linking through to the full /work portfolio.
+ * Home portfolio preview — a masonry cut of the reel: six projects from the
+ * Behance portfolio, tall / wide / square frames interleaved so every column
+ * lands at the same height and the block closes flush with no empty gaps.
+ *
+ * Frame heights per column width w: tall 4/5 = 1.25w, square 1/1 = w, wide 4/3
+ * = 0.75w. At three columns the pairs are (tall+wide), (square+square),
+ * (tall+wide) = 2w each; at two columns the halves are (tall+wide+square) = 3w
+ * each — so the bottom edge lines up at either width.
  */
+const SELECTION: { slug: string; ratio: string }[] = [
+  { slug: "falooda-nation-pradhama-drishtya-kuttakkar", ratio: "4 / 5" },
+  { slug: "lukas-baptism", ratio: "4 / 3" },
+  { slug: "onam-with-muffin-house-india", ratio: "1 / 1" },
+  { slug: "diya-krishna-aranyavedha-wellness", ratio: "1 / 1" },
+  { slug: "rad-fitness", ratio: "4 / 5" },
+  { slug: "koilon-nuts", ratio: "4 / 3" },
+];
+
+const FEATURED = SELECTION.map(({ slug, ratio }) => ({
+  project: projectBySlug(slug) as Project | undefined,
+  ratio,
+}))
+  .filter((x): x is { project: Project; ratio: string } => Boolean(x.project))
+  .map((x) => ({ project: x.project, ratio: x.ratio }));
+
 export function Work() {
   const ref = useRef<HTMLElement>(null);
   revealChildren(ref);
-
-  const featured = PROJECTS.slice(0, 3);
 
   return (
     <section ref={ref} id="work" className="relative bg-background">
@@ -34,10 +54,27 @@ export function Work() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-12 md:gap-y-28">
-          {featured.map((p, i) => (
-            <WorkCard key={p.slug} project={p} span={spanFor(i)} />
+        <div className="-mb-14 mt-16 columns-1 gap-x-10 sm:columns-2 lg:columns-3">
+          {FEATURED.map(({ project, ratio }, i) => (
+            <div key={project.slug} className="mb-14 break-inside-avoid">
+              <WorkCard project={project} ratio={ratio} caption="stack" eager={i < 3} />
+            </div>
           ))}
+        </div>
+
+        <div
+          data-reveal
+          className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-hairline pt-6"
+        >
+          <p className="meta text-foreground/50">
+            {FEATURED.length} of {PROJECTS.length} projects — the full reel on Behance
+          </p>
+          <Link
+            to="/work"
+            className="meta border-b border-foreground/40 pb-1 text-[10px] text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
+          >
+            View all work
+          </Link>
         </div>
       </div>
     </section>

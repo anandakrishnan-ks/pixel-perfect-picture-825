@@ -7,15 +7,25 @@ import { registerGsap, reducedMotion } from "./anim";
 /**
  * Cinematic project card — image reveal + parallax scrub + hover transition,
  * linking through to the project detail page.
+ *
+ * `ratio` is a CSS aspect-ratio value so a masonry layout can interleave tall
+ * and wide frames; it defaults to the native cover frame.
  */
 export function WorkCard({
   project,
   span = "",
   eager = false,
+  ratio = "808 / 632",
+  className = "",
+  caption = "row",
 }: {
   project: Project;
   span?: string;
   eager?: boolean;
+  ratio?: string;
+  className?: string;
+  /** "row" = title and label side by side; "stack" = fixed-height caption for masonry. */
+  caption?: "row" | "stack";
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -52,14 +62,17 @@ export function WorkCard({
   }, []);
 
   return (
-    <article ref={ref} className={`col-span-1 ${span}`}>
+    <article ref={ref} className={`col-span-1 ${span} ${className}`}>
       <Link
         to="/work/$slug"
         params={{ slug: project.slug }}
         className="group block"
         aria-label={`Open project ${project.title}`}
       >
-        <div className="grain relative aspect-[808/632] overflow-hidden bg-card">
+        <div
+          className="grain relative overflow-hidden bg-card"
+          style={{ aspectRatio: ratio }}
+        >
           <img
             src={project.img}
             alt={`${project.title} — ${project.category}`}
@@ -73,14 +86,25 @@ export function WorkCard({
             <span className="text-foreground">▶</span>
           </div>
         </div>
-        <div className="mt-5 flex items-baseline justify-between gap-6 border-t border-hairline pt-4">
-          <h3 className="display text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
-            {project.title}
-          </h3>
-          <span className="meta shrink-0 text-right text-foreground/50">
-            {project.category} — {project.client}
-          </span>
-        </div>
+        {caption === "stack" ? (
+          <div className="mt-5 flex h-[112px] flex-col justify-between gap-3 border-t border-hairline pt-4">
+            <h3 className="display line-clamp-2 leading-[1.12] text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
+              {project.title}
+            </h3>
+            <span className="meta leading-snug text-foreground/50">
+              {project.category} — {project.client}
+            </span>
+          </div>
+        ) : (
+          <div className="mt-5 flex items-baseline justify-between gap-6 border-t border-hairline pt-4">
+            <h3 className="display text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
+              {project.title}
+            </h3>
+            <span className="meta shrink-0 text-right text-foreground/50">
+              {project.category} — {project.client}
+            </span>
+          </div>
+        )}
       </Link>
     </article>
   );
