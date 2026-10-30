@@ -40,10 +40,11 @@ export function Nav() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 mix-blend-difference text-[#f5f4f0] transition-[padding] duration-700 ${
+        className={`fixed inset-x-0 top-0 z-50 mix-blend-difference text-[#f5f4f0] transition-[padding] duration-700 lg:absolute ${
           scrolled ? "py-4" : "py-8"
         }`}
       >
+
         <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-6 lg:px-12">
           <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="SAN MEDIA COMPANY — home">
             <img src={markWhite.url} alt="" width={30} height={30} className="h-8 w-8 object-contain lg:h-10 lg:w-10" />
