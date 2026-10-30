@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import gsap from "gsap";
 import { PageShell } from "@/components/sanmedia/PageShell";

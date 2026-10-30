@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { revealChildren } from "./anim";
-import markWhite from "@/assets/sanmedia-mark-white.png.asset.json";
 
 /** Home closing CTA — the shared site footer lives in the root layout. */
 export function Contact() {
@@ -32,11 +31,6 @@ export function Contact() {
             contact@sanmediacompany.in
           </a>
           <span className="meta text-foreground/50">Trivandrum, Kerala — India</span>
-        </div>
-
-        <div data-reveal className="mt-24 flex items-center gap-3">
-          <img src={markWhite.url} alt="" width={28} height={28} className="h-6 w-6 object-contain" />
-          <span className="display text-lg tracking-[0.08em] text-foreground">SAN MEDIA COMPANY</span>
         </div>
       </div>
     </section>
