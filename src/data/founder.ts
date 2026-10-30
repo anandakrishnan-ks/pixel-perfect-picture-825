@@ -9,9 +9,14 @@ export const FOUNDER = {
   title: "Founder & CEO",
   bio: "",
   vision: "",
-  quote: "",
-  /** Founder message paragraphs — add Ajmal's real words here; the block stays hidden while empty. */
-  message: [] as string[],
+  // Interim founder's note drafted for review — replace with Ajmal's own words when ready.
+  quote: "Every story deserves to be seen differently.",
+  message: [
+    "When I started SAN MEDIA COMPANY in Thiruvananthapuram, the intention was simple: to create work that people remember — not because it is loud, but because it is honest, considered and beautifully made.",
+    "Every brand, business and individual we work with carries a story worth telling. Our role is to listen closely, understand what matters, and translate it into films, campaigns and visuals that move people and serve a clear purpose.",
+    "We approach every project with the same discipline — thoughtful planning, careful craft and complete commitment, from the first conversation to the final delivery. Whether it is a brand film, a campaign or a single photograph, the standard does not change.",
+    "Thank you for considering us as your creative partner. We look forward to telling your story, across Kerala and beyond.",
+  ] as string[],
   photo: founderPhoto.url as string | null,
 };
 
