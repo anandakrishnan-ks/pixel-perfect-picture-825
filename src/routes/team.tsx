@@ -88,10 +88,7 @@ function TeamPage() {
           <div className="grid grid-cols-1 gap-px bg-foreground/10 md:grid-cols-3">
             {TEAM_MEMBERS.map((m) => (
               <div key={m.role} data-reveal className="group bg-background p-8 transition-colors duration-700 hover:bg-card">
-                <div className="flex items-baseline justify-between">
-                  
-                </div>
-                <h3 className="display mt-5 text-2xl text-foreground md:text-3xl">{m.role}</h3>
+                <h3 className="display text-2xl text-foreground md:text-3xl">{m.role}</h3>
                 <p className="mt-4 text-sm font-light leading-relaxed text-foreground/60">{m.desc}</p>
               </div>
             ))}
