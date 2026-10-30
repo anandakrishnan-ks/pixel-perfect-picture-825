@@ -154,7 +154,7 @@ function ContactPage() {
                 <p className="meta text-foreground/50">Email</p>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="display mt-4 block break-all text-2xl text-foreground transition-opacity hover:opacity-80 md:text-3xl"
+                  className="display mt-4 block break-all text-[clamp(1rem,6.6vw,1.5rem)] text-foreground transition-opacity hover:opacity-80 md:text-3xl"
                 >
                   {EMAIL}
                 </a>
