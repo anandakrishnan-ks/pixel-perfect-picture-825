@@ -89,7 +89,7 @@ function ProjectPage() {
         <section className="mx-auto max-w-[1500px] px-6 py-24 md:py-36 lg:px-12">
           <div className="grid gap-12 md:grid-cols-12">
             <div className="md:col-span-7">
-              <p className="meta text-foreground/60">The film</p>
+              <p className="meta text-foreground/60">The project</p>
               <p className="mt-8 text-lg font-light leading-relaxed text-foreground/80 md:text-2xl md:leading-relaxed">
                 {project.desc}
               </p>
@@ -106,9 +106,17 @@ function ProjectPage() {
               <div className="border-t border-hairline pt-5">
                 <p className="meta text-foreground/50">Full credits</p>
                 <p className="mt-2 text-sm font-light text-foreground/85">
-                  Available on request — contact@sanmediacompany.in
+                  Full project on Behance — credits on request at contact@sanmediacompany.in
                 </p>
               </div>
+              <a
+                href={project.behance}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mr-4 inline-block bg-foreground px-7 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-85"
+              >
+                View on Behance ↗
+              </a>
               <Link
                 to="/contact"
                 className="inline-block border border-foreground/40 px-7 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10"

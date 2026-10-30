@@ -1,15 +1,17 @@
+import founderPhoto from "@/assets/ajmal-niaz.png.asset.json";
+
 /**
  * EDITABLE PLACEHOLDERS — replace these with the real founder details when supplied.
  * Nothing here should be presented as real information until replaced.
  */
 export const FOUNDER = {
-  name: "[FOUNDER NAME]",
+  name: "Ajmal Niaz",
   title: "Founder & CEO",
   bio: "[Founder biography — a short professional background goes here: the path into filmmaking, the company's origin in Thiruvananthapuram, and what SAN MEDIA COMPANY stands for.]",
   vision:
     "[Vision — one or two lines on where the company is headed: the stories it wants to tell for Kerala's brands, businesses and creators.]",
   quote: "[Personal statement — a short line in the founder's own words.]",
-  photo: null as string | null, // set to an imported image URL when a real portrait is available
+  photo: founderPhoto.url as string | null,
 };
 
 export type TeamMember = {
