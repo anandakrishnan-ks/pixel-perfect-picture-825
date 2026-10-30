@@ -87,11 +87,11 @@ export function WorkCard({
           </div>
         </div>
         {caption === "stack" ? (
-          <div className="mt-5 flex h-[92px] flex-col justify-between border-t border-hairline pt-4">
+          <div className="mt-5 flex h-[100px] flex-col justify-between border-t border-hairline pt-4">
             <h3 className="display line-clamp-2 text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
               {project.title}
             </h3>
-            <span className="meta truncate text-foreground/50">
+            <span className="meta leading-snug text-foreground/50">
               {project.category} — {project.client}
             </span>
           </div>
