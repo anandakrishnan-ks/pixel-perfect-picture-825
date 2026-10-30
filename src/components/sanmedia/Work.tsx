@@ -1,18 +1,34 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS, projectBySlug, type Project } from "@/data/projects";
 import { WorkCard } from "./WorkCard";
 import { revealChildren } from "./anim";
 
 /**
  * Home portfolio preview — a masonry cut of the reel: six projects from the
- * Behance portfolio, tall and wide frames interleaved so every column lands at
- * the same height and the block closes with no empty gaps.
+ * Behance portfolio, tall / wide / square frames interleaved so every column
+ * lands at the same height and the block closes flush with no empty gaps.
+ *
+ * Frame heights per column width w: tall 4/5 = 1.25w, square 1/1 = w, wide 4/3
+ * = 0.75w. At three columns the pairs are (tall+wide), (square+square),
+ * (tall+wide) = 2w each; at two columns the halves are (tall+wide+square) = 3w
+ * each — so the bottom edge lines up at either width.
  */
-const FEATURED = PROJECTS.slice(0, 6);
+const SELECTION: { slug: string; ratio: string }[] = [
+  { slug: "falooda-nation-pradhama-drishtya-kuttakkar", ratio: "4 / 5" },
+  { slug: "lukas-baptism", ratio: "4 / 3" },
+  { slug: "onam-with-muffin-house-india", ratio: "1 / 1" },
+  { slug: "diya-krishna-aranyavedha-wellness", ratio: "1 / 1" },
+  { slug: "rad-fitness", ratio: "4 / 5" },
+  { slug: "koilon-nuts", ratio: "4 / 3" },
+];
 
-/** Frame per card: tall (4/5) and wide (4/3) so columns balance at 2 and 3 columns. */
-const RATIOS = ["4 / 5", "4 / 3", "4 / 3", "4 / 5", "4 / 3", "4 / 5"];
+const FEATURED = SELECTION.map(({ slug, ratio }) => ({
+  project: projectBySlug(slug) as Project | undefined,
+  ratio,
+}))
+  .filter((x): x is { project: Project; ratio: string } => Boolean(x.project))
+  .map((x) => ({ project: x.project, ratio: x.ratio }));
 
 export function Work() {
   const ref = useRef<HTMLElement>(null);
@@ -39,9 +55,9 @@ export function Work() {
         </div>
 
         <div className="-mb-14 mt-16 columns-1 gap-x-10 sm:columns-2 lg:columns-3">
-          {FEATURED.map((p, i) => (
-            <div key={p.slug} className="mb-14 break-inside-avoid">
-              <WorkCard project={p} ratio={RATIOS[i % RATIOS.length]} eager={i < 3} />
+          {FEATURED.map(({ project, ratio }, i) => (
+            <div key={project.slug} className="mb-14 break-inside-avoid">
+              <WorkCard project={project} ratio={ratio} caption="stack" eager={i < 3} />
             </div>
           ))}
         </div>
