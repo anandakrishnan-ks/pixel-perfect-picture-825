@@ -60,7 +60,7 @@ export function FounderSection() {
             {hasMessage && (
               <div className="mt-10 max-w-xl space-y-5 border-l border-hairline pl-6">
                 {FOUNDER.message.map((para, i) => (
-                  <p key={i} className="lead text-base leading-relaxed text-foreground/70 md:text-lg">
+                  <p key={i} className="lead text-base leading-relaxed text-foreground/80 md:text-lg">
                     {para}
                   </p>
                 ))}

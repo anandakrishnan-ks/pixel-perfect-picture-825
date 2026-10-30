@@ -75,7 +75,7 @@ function TeamPage() {
               {FOUNDER.message.length > 0 && (
                 <div className="mt-8 max-w-xl space-y-4 border-l border-hairline pl-6">
                   {FOUNDER.message.map((para, i) => (
-                    <p key={i} className="lead text-base leading-relaxed text-foreground/70">
+                    <p key={i} className="lead text-base leading-relaxed text-foreground/80">
                       {para}
                     </p>
                   ))}

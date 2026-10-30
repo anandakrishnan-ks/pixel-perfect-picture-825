@@ -94,7 +94,7 @@ export function Hero() {
           <p className="pull mt-8 text-2xl leading-snug text-foreground/90 md:text-3xl">
             Films. Stories. Brands. Visual Experiences.
           </p>
-          <p className="lead mx-auto mt-5 max-w-xl text-sm leading-relaxed text-foreground/65 md:text-base">
+          <p className="lead mx-auto mt-5 max-w-xl text-sm leading-relaxed text-foreground/75 md:text-base">
             A creative media and production company based in Thiruvananthapuram, Kerala — creating
             films, campaigns and visual experiences for brands across Kerala and beyond.
           </p>
