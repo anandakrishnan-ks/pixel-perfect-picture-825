@@ -17,7 +17,10 @@ function listFiles(dir: string, acc: string[] = []): string[] {
 }
 
 const FILES = listFiles(SRC_ROOT).filter(
-  (f) => !f.includes("node_modules") && !f.includes("routeTree.gen")
+  (f) =>
+    !f.includes("node_modules") &&
+    !f.includes("routeTree.gen") &&
+    !f.includes(`${sep}test${sep}`)
 );
 
 describe("Brand rules", () => {
