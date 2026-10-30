@@ -44,7 +44,7 @@ export function FounderSection() {
 
           {/* Message */}
           <div data-reveal className="flex flex-col justify-center md:col-span-6 md:col-start-7">
-            <p className="meta text-[10px] text-foreground/50">{hasMessage || FOUNDER.quote ? "A message from the founder" : "Founder, SAN MEDIA COMPANY"}</p>
+            <p className="meta text-[10px] text-foreground/50">{hasMessage || FOUNDER.quote ? "A note from the founder" : "Founder, SAN MEDIA COMPANY"}</p>
             <h2 className="display mt-6 text-[13vw] leading-[0.9] text-foreground md:text-[5.2vw]">
               {FOUNDER.name.toUpperCase()}
             </h2>
@@ -74,7 +74,10 @@ export function FounderSection() {
             {(hasMessage || FOUNDER.quote) && (
               <div className="mt-12 flex items-center gap-4">
                 <span className="h-px w-12 bg-foreground/50" />
-                <span className="display text-lg tracking-[0.12em] text-foreground">{FOUNDER.name}</span>
+                <div>
+                  <span className="display block text-lg tracking-[0.12em] text-foreground">— {FOUNDER.name}</span>
+                  <span className="meta mt-1 block text-[10px] text-foreground/50">{FOUNDER.title}, SAN MEDIA COMPANY</span>
+                </div>
               </div>
             )}
           </div>

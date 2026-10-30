@@ -9,13 +9,12 @@ export const FOUNDER = {
   title: "Founder & CEO",
   bio: "",
   vision: "",
-  // Interim founder's note drafted for review — replace with Ajmal's own words when ready.
-  quote: "Every story deserves to be seen differently.",
+  quote: "",
   message: [
-    "When I started SAN MEDIA COMPANY in Thiruvananthapuram, the intention was simple: to create work that people remember — not because it is loud, but because it is honest, considered and beautifully made.",
-    "Every brand, business and individual we work with carries a story worth telling. Our role is to listen closely, understand what matters, and translate it into films, campaigns and visuals that move people and serve a clear purpose.",
-    "We approach every project with the same discipline — thoughtful planning, careful craft and complete commitment, from the first conversation to the final delivery. Whether it is a brand film, a campaign or a single photograph, the standard does not change.",
-    "Thank you for considering us as your creative partner. We look forward to telling your story, across Kerala and beyond.",
+    "I started SAN MEDIA COMPANY in Thiruvananthapuram with a simple belief — every story deserves to be told with honesty, intention, and a perspective of its own. What began as a passion for visual storytelling has grown into a space where ideas can take shape and connect with people in a meaningful way.",
+    "For every client we work with, the story comes first. We take the time to understand what makes a brand, person, or idea unique, and translate that into work that feels authentic rather than manufactured. We believe the best stories aren't just seen — they are felt.",
+    "As we grow, one thing will never change: the standard we hold ourselves to. Whether it's a large production or a small project, we approach every brief with the same attention to detail, creativity, and commitment to doing the work right.",
+    "Thank you for considering SAN MEDIA COMPANY. Whether you're here from Thiruvananthapuram, somewhere across Kerala, or beyond, we'd be honoured to hear your story and explore what we can create together.",
   ] as string[],
   photo: founderPhoto.url as string | null,
 };
