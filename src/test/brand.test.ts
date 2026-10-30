@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 // Brand rules the site must hold to:
 // - old email and old brand name never reappear in source
 // - the official email is used in contact + footer
-const SRC_ROOT = join(import.meta.dirname, "..");
+const SRC_ROOT = join(import.meta.dirname, "..", "..");
 
 function listFiles(dir: string, acc: string[] = []): string[] {
   for (const entry of readdirSync(dir)) {
