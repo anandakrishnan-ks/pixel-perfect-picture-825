@@ -1,14 +1,10 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { revealChildren } from "./anim";
-import bts1 from "@/assets/bts-1.jpg";
-import bts2 from "@/assets/bts-2.jpg";
-import bts3 from "@/assets/bts-3.jpg";
-import bts4 from "@/assets/bts-4.jpg";
-import bts5 from "@/assets/bts-5.jpg";
-import bts6 from "@/assets/bts-6.jpg";
 
-const SHOTS = [bts1, bts2, bts3, bts4, bts5, bts6];
+import { PROJECTS } from "@/data/projects";
+
+const SHOTS = PROJECTS.slice(0, 6);
 
 /**
  * Home introduction — positions the company as Kerala-wide,
@@ -50,23 +46,25 @@ export function About() {
         </div>
 
         <div className="mt-20 grid grid-cols-2 gap-3 md:grid-cols-6 md:gap-4">
-          {SHOTS.map((src, i) => (
-            <figure
-              key={src}
+          {SHOTS.map((p, i) => (
+            <Link
+              to="/work/$slug"
+              params={{ slug: p.slug }}
+              key={p.slug}
               data-reveal
-              className={`grain relative overflow-hidden bg-card ${
+              className={`group grain relative block overflow-hidden bg-card ${
                 i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"
               } ${i >= 2 ? "md:aspect-[3/4]" : ""}`}
             >
               <img
-                src={src}
-                alt={`SAN MEDIA COMPANY behind the scenes — frame ${i + 1}`}
+                src={p.img}
+                alt={p.title}
                 loading="lazy"
-                width={1024}
-                height={1024}
-                className="h-full w-full object-cover"
+                width={808}
+                height={632}
+                className="mono-reveal h-full w-full object-cover"
               />
-            </figure>
+            </Link>
           ))}
         </div>
       </div>

@@ -66,7 +66,7 @@ export function WorkCard({
             loading={eager ? "eager" : "lazy"}
             width={808}
             height={632}
-            className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045]"
+            className="mono-reveal h-full w-full object-cover transition-[transform,filter] duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.045]"
           />
           <div className="absolute inset-0 bg-background/0 transition-colors duration-700 group-hover:bg-background/10" />
           <div className="absolute right-5 top-5 flex h-12 w-12 translate-y-2 items-center justify-center rounded-full border border-foreground/40 opacity-0 backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
