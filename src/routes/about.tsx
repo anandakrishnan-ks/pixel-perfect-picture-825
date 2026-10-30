@@ -169,15 +169,15 @@ function AboutPage() {
             <div className="md:col-span-6 md:col-start-7">
               <p className="meta text-foreground/50">{FOUNDER.title}</p>
               <h3 className="display mt-4 text-5xl text-foreground md:text-6xl">{FOUNDER.name}</h3>
-              <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+              {FOUNDER.bio && (<p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
                 {FOUNDER.bio}
-              </p>
-              <p className="mt-6 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
+              </p>)}
+              {FOUNDER.vision && (<p className="mt-6 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
                 {FOUNDER.vision}
-              </p>
-              <blockquote className="mt-10 border-l-2 border-foreground/30 pl-6 text-xl font-light leading-relaxed text-foreground/85 md:text-2xl">
+              </p>)}
+              {FOUNDER.quote && (<blockquote className="mt-10 border-l-2 border-foreground/30 pl-6 text-xl font-light leading-relaxed text-foreground/85 md:text-2xl">
                 {FOUNDER.quote}
-              </blockquote>
+              </blockquote>)}
             </div>
           </div>
         </section>
@@ -193,13 +193,12 @@ function AboutPage() {
                 to="/team"
                 className="meta border-b border-foreground/40 pb-1 text-[10px] text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
               >
-                Meet the full team
+                See every role
               </Link>
             </div>
             <div data-reveal className="mt-16 grid grid-cols-1 gap-px bg-foreground/10 md:grid-cols-3">
               {TEAM_MEMBERS.slice(0, 3).map((m) => (
                 <div key={m.role} className="bg-background p-8">
-                  <p className="meta text-foreground/40">[Name]</p>
                   <h3 className="display mt-4 text-2xl text-foreground">{m.role}</h3>
                   <p className="mt-4 text-sm font-light leading-relaxed text-foreground/60">{m.desc}</p>
                 </div>
