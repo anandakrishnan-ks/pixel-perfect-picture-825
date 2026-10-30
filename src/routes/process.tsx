@@ -145,6 +145,18 @@ function ProcessPage() {
       <main className="bg-background">
         <PageHero
           label="The process"
+          number="04"
+          variant="steps"
+          aside={
+            <div className="grid grid-cols-2 border-t border-hairline md:grid-cols-6">
+              {STAGES.map((s, i) => (
+                <div key={s.title} className="border-b border-hairline px-3 py-6 text-left md:border-b-0 md:border-r last:border-r-0">
+                  <p className="meta text-foreground/40">{String(i + 1).padStart(2, "0")}</p>
+                  <p className="display mt-3 text-xl text-foreground md:text-2xl">{s.title}</p>
+                </div>
+              ))}
+            </div>
+          }
           title={
             <>
               FROM IDEA TO

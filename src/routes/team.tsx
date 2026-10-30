@@ -40,6 +40,8 @@ function TeamPage() {
       <main className="bg-background">
         <PageHero
           label="Team"
+          variant="centered"
+          aside={<p className="meta text-paper-foreground/60">Direction — Camera — Edit — Sound — Design</p>}
           title={
             <>
               THE PEOPLE BEHIND

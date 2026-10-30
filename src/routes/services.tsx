@@ -117,6 +117,20 @@ function ServicesPage() {
       <main className="bg-background">
         <PageHero
           label="Services"
+          number="02"
+          variant="index"
+          aside={
+            <ol className="border-t border-hairline">
+              {SERVICE_GROUPS.map((g) => (
+                <li key={g.n}>
+                  <a href={`#service-${g.n}`} className="group flex items-baseline gap-6 border-b border-hairline py-5 transition-colors hover:bg-foreground/5">
+                    <span className="meta text-foreground/40">{g.n}</span>
+                    <span className="display text-2xl text-foreground/80 transition-all group-hover:translate-x-2 group-hover:text-foreground md:text-3xl">{g.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          }
           title={
             <>
               WHAT WE
