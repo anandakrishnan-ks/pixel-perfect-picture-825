@@ -6,7 +6,8 @@
 
 /*
  * SAN MEDIA COMPANY design system — cinematic monochrome.
- * Display: Anton (huge condensed headlines). Sub-headings, leads and quotes: Fraunces (editorial serif).
+ * Display: Anton (huge condensed headlines). Sub-headings, leads and quotes: Space Grotesk
+ * (minimalist grotesque — strong, no curved serif shapes, no italics).
  * Body: Hanken Grotesk. Metadata: Space Mono.
  * All colors are oklch semantic tokens.
  */
@@ -44,7 +45,7 @@
   --font-display: "Anton", "Arial Narrow", sans-serif;
   --font-sans: "Hanken Grotesk", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
-  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-editorial: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
 }
 
 /*
@@ -138,30 +139,26 @@
 }
 
 /*
- * Editorial serif (Fraunces) — the voice for sub-headings, lead paragraphs and quotes.
- * Optical sizing is automatic, so small text stays sturdy while large sub-headings
- * open up into high contrast. Weight lives here so no component needs font-light/normal.
+ * Editorial grotesque (Space Grotesk) — the voice for sub-headings, lead paragraphs and quotes.
+ * Deliberately minimalist and sturdy: no curved serif shapes, no italics. Weight lives here so
+ * no component needs font-light/normal.
  */
 @utility lead {
-  font-family: var(--font-serif);
-  font-optical-sizing: auto;
+  font-family: var(--font-editorial);
   font-weight: 400;
-  letter-spacing: 0.004em;
+  letter-spacing: 0.002em;
 }
 
 @utility subhead {
-  font-family: var(--font-serif);
-  font-optical-sizing: auto;
-  font-weight: 500;
-  letter-spacing: -0.004em;
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 @utility pull {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  letter-spacing: 0.004em;
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 /* Animated film grain, applied over imagery via .grain */
