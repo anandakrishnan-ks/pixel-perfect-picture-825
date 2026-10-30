@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Type roles are fixed: `.display` (Anton) only for giant display headlines and the outlined wordmark; `.lead` / `.subhead` / `.pull` (the serif in `src/styles.css`) for lead copy, sub-headings and quotes; `.meta` (mono) for small tracked labels. Add a new utility instead of dropping ad-hoc font classes into components — the font family is chosen in one place so it can be swapped without touching pages.
+- Type roles are fixed: `.display` (Anton) only for giant display headlines and the outlined wordmark; `.lead` / `.subhead` / `.pull` (the editorial face in `src/styles.css` — a strong, minimalist grotesque, never a curved/italic serif) for lead copy, sub-headings and quotes; `.meta` (mono) for small tracked labels. Add a new utility instead of dropping ad-hoc font classes into components — the font family is chosen in one place so it can be swapped without touching pages.
