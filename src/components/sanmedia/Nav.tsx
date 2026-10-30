@@ -47,7 +47,7 @@ export function Nav() {
         <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-6 lg:px-12">
           <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="SAN MEDIA COMPANY — home">
             <img src={markWhite.url} alt="" width={30} height={30} className="h-8 w-8 object-contain lg:h-10 lg:w-10" />
-            <span className="display text-base tracking-[0.08em] md:text-xl lg:text-2xl">SAN MEDIA COMPANY</span>
+            <span className="display text-[1rem] tracking-[0.08em] md:text-xl lg:text-2xl">SAN MEDIA COMPANY</span>
           </Link>
 
           <nav className="hidden items-center gap-10 lg:flex xl:gap-14" aria-label="Primary">

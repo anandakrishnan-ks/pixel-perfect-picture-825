@@ -58,7 +58,7 @@ const BUDGETS = ["Under ₹1 lakh", "₹1–5 lakh", "₹5–20 lakh", "₹20 la
 const TIMELINES = ["As soon as possible", "Within 1 month", "1–3 months", "3–6 months", "Flexible"];
 
 const inputCls =
-  "w-full border-b border-hairline bg-transparent py-3 text-base font-light text-foreground placeholder:text-foreground/30 focus:border-foreground focus:outline-none transition-colors";
+  "w-full border-b border-hairline bg-transparent py-3 text-[1rem] font-light text-foreground placeholder:text-foreground/30 focus:border-foreground focus:outline-none transition-colors";
 
 type FormState = {
   name: string;
