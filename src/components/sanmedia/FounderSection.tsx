@@ -21,8 +21,8 @@ export function FounderSection() {
 
         <div className="mt-14 grid gap-12 md:grid-cols-12 md:gap-16">
           {/* Portrait */}
-          <figure data-reveal className="md:col-span-5">
-            <div className="grain relative aspect-[4/5] overflow-hidden border border-hairline bg-card">
+          <figure data-reveal className="flex flex-col md:col-span-5">
+            <div className="grain relative min-h-[420px] flex-1 overflow-hidden border border-hairline bg-card">
               {FOUNDER.photo && (
                 <img
                   src={FOUNDER.photo}
