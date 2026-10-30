@@ -150,11 +150,11 @@ function ContactPage() {
           <div className="grid gap-16 border-t border-hairline pt-16 md:grid-cols-12">
             {/* Info column */}
             <div data-reveal className="space-y-10 md:col-span-4">
-              <div>
+              <div className="@container">
                 <p className="meta text-foreground/50">Email</p>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="display mt-4 block break-all text-[clamp(1rem,6.6vw,1.5rem)] text-foreground transition-opacity hover:opacity-80 md:text-[1.75rem]"
+                  className="display mt-4 block break-all text-[clamp(0.95rem,7.4cqw,1.85rem)] text-foreground transition-opacity hover:opacity-80"
                 >
                   {EMAIL}
                 </a>
