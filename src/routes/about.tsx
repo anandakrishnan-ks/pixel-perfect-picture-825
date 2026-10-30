@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/sanmedia/PageShell";
 import { PageHero } from "@/components/sanmedia/PageHero";
-import { FOUNDER } from "@/data/founder";
+import { FounderSection } from "@/components/sanmedia/FounderSection";
 import { TEAM_MEMBERS } from "@/data/founder";
 import { revealChildren } from "@/components/sanmedia/anim";
 
@@ -143,44 +143,7 @@ function AboutPage() {
           </div>
         </section>
 
-        {/* Founder */}
-        <section className="mx-auto max-w-[1500px] px-6 py-32 md:py-44 lg:px-12">
-          <p data-reveal className="meta text-foreground/60">The founder</p>
-          <h2 data-reveal className="display mt-8 text-[10vw] leading-none text-foreground md:text-[5.5vw]">
-            THE VISION
-            <br />
-            BEHIND THE LENS.
-          </h2>
-
-          <div data-reveal className="mt-20 grid gap-12 md:grid-cols-12">
-            <div className="md:col-span-5">
-              <div className="grain relative flex aspect-[3/4] items-center justify-center overflow-hidden border border-hairline bg-card">
-                {FOUNDER.photo ? (
-                  <img src={FOUNDER.photo} alt={`${FOUNDER.name} — ${FOUNDER.title}`} className="h-full w-full object-cover object-[center_30%]" loading="lazy" />
-                ) : (
-                  <p className="meta px-8 text-center text-[10px] leading-loose text-foreground/40">
-                    Founder portrait
-                    <br />
-                    — add image —
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className="md:col-span-6 md:col-start-7">
-              <p className="meta text-foreground/50">{FOUNDER.title}</p>
-              <h3 className="display mt-4 text-5xl text-foreground md:text-6xl">{FOUNDER.name}</h3>
-              {FOUNDER.bio && (<p className="mt-8 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
-                {FOUNDER.bio}
-              </p>)}
-              {FOUNDER.vision && (<p className="mt-6 max-w-xl text-base font-light leading-relaxed text-foreground/70 md:text-lg">
-                {FOUNDER.vision}
-              </p>)}
-              {FOUNDER.quote && (<blockquote className="mt-10 border-l-2 border-foreground/30 pl-6 text-xl font-light leading-relaxed text-foreground/85 md:text-2xl">
-                {FOUNDER.quote}
-              </blockquote>)}
-            </div>
-          </div>
-        </section>
+        <FounderSection />
 
         {/* Team preview */}
         <section className="relative border-t border-hairline">
