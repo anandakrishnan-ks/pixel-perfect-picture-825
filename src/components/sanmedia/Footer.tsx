@@ -33,7 +33,7 @@ export function Footer() {
             <p className="meta text-[10px] text-foreground/50">Have a story to tell?</p>
             <a
               href="mailto:contact@sanmediacompany.in"
-              className="display mt-4 block break-all text-[8vw] leading-none text-foreground transition-opacity hover:opacity-75 md:text-[4.2vw]"
+              className="display mt-4 block whitespace-nowrap text-[7.2vw] leading-none text-foreground transition-opacity hover:opacity-75 md:text-[4.2vw]"
             >
               contact@sanmediacompany.in
             </a>
@@ -102,7 +102,7 @@ export function Footer() {
         <p
           data-reveal
           aria-hidden
-          className="wordmark-outline select-none whitespace-nowrap text-center text-[11vw] leading-[0.85] md:text-[9.5vw]"
+          className="wordmark-outline select-none whitespace-nowrap text-center text-[11vw] leading-[0.85] pb-6 md:pb-10 md:text-[9.5vw]"
         >
           SAN MEDIA COMPANY
         </p>

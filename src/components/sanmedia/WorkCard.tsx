@@ -73,11 +73,11 @@ export function WorkCard({
             <span className="text-foreground">▶</span>
           </div>
         </div>
-        <div className="mt-5 flex items-baseline justify-between border-t border-hairline pt-4">
+        <div className="mt-5 flex items-baseline justify-between gap-6 border-t border-hairline pt-4">
           <h3 className="display text-xl text-foreground transition-transform duration-500 group-hover:translate-x-2 md:text-2xl">
             {project.title}
           </h3>
-          <span className="meta text-foreground/50">
+          <span className="meta shrink-0 text-right text-foreground/50">
             {project.category} — {project.client}
           </span>
         </div>
