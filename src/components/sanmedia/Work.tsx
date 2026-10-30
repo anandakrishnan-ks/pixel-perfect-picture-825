@@ -1,18 +1,22 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { PROJECTS, spanFor } from "@/data/projects";
+import { PROJECTS } from "@/data/projects";
 import { WorkCard } from "./WorkCard";
 import { revealChildren } from "./anim";
 
 /**
- * Home portfolio preview — the first three films from the reel,
- * linking through to the full /work portfolio.
+ * Home portfolio preview — a masonry cut of the reel: six projects from the
+ * Behance portfolio, tall and wide frames interleaved so every column lands at
+ * the same height and the block closes with no empty gaps.
  */
+const FEATURED = PROJECTS.slice(0, 6);
+
+/** Frame per card: tall (4/5) and wide (4/3) so columns balance at 2 and 3 columns. */
+const RATIOS = ["4 / 5", "4 / 3", "4 / 3", "4 / 5", "4 / 3", "4 / 5"];
+
 export function Work() {
   const ref = useRef<HTMLElement>(null);
   revealChildren(ref);
-
-  const featured = PROJECTS.slice(0, 3);
 
   return (
     <section ref={ref} id="work" className="relative bg-background">
@@ -34,10 +38,27 @@ export function Work() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-12 md:gap-y-28">
-          {featured.map((p, i) => (
-            <WorkCard key={p.slug} project={p} span={spanFor(i)} />
+        <div className="-mb-14 mt-16 columns-1 gap-x-10 sm:columns-2 lg:columns-3">
+          {FEATURED.map((p, i) => (
+            <div key={p.slug} className="mb-14 break-inside-avoid">
+              <WorkCard project={p} ratio={RATIOS[i % RATIOS.length]} eager={i < 3} />
+            </div>
           ))}
+        </div>
+
+        <div
+          data-reveal
+          className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-hairline pt-6"
+        >
+          <p className="meta text-foreground/50">
+            {FEATURED.length} of {PROJECTS.length} projects — the full reel on Behance
+          </p>
+          <Link
+            to="/work"
+            className="meta border-b border-foreground/40 pb-1 text-[10px] text-foreground/80 transition-colors hover:border-foreground hover:text-foreground"
+          >
+            View all work
+          </Link>
         </div>
       </div>
     </section>

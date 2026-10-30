@@ -7,15 +7,22 @@ import { registerGsap, reducedMotion } from "./anim";
 /**
  * Cinematic project card — image reveal + parallax scrub + hover transition,
  * linking through to the project detail page.
+ *
+ * `ratio` is a CSS aspect-ratio value so a masonry layout can interleave tall
+ * and wide frames; it defaults to the native cover frame.
  */
 export function WorkCard({
   project,
   span = "",
   eager = false,
+  ratio = "808 / 632",
+  className = "",
 }: {
   project: Project;
   span?: string;
   eager?: boolean;
+  ratio?: string;
+  className?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -52,14 +59,17 @@ export function WorkCard({
   }, []);
 
   return (
-    <article ref={ref} className={`col-span-1 ${span}`}>
+    <article ref={ref} className={`col-span-1 ${span} ${className}`}>
       <Link
         to="/work/$slug"
         params={{ slug: project.slug }}
         className="group block"
         aria-label={`Open project ${project.title}`}
       >
-        <div className="grain relative aspect-[808/632] overflow-hidden bg-card">
+        <div
+          className="grain relative overflow-hidden bg-card"
+          style={{ aspectRatio: ratio }}
+        >
           <img
             src={project.img}
             alt={`${project.title} — ${project.category}`}
